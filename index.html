@@ -7,9 +7,6 @@
   <meta name="description" content="Celestia Astrology offers premium astrology consulting services including birth chart analysis, career guidance, marriage compatibility, and personal life coaching. Book your consultation today." />
   <meta name="keywords" content="astrology consulting, birth chart analysis, career astrology, marriage compatibility, zodiac, horoscope reading" />
   <meta name="author" content="Celestia Astrology" />
-  <meta property="og:title" content="Celestia Astrology — Discover Your Cosmic Blueprint" />
-  <meta property="og:description" content="Premium astrology consulting to guide you through life's most important decisions." />
-  <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,7 +26,6 @@
     img { max-width: 100%; display: block; }
     a { text-decoration: none; color: inherit; }
 
-    /* ── CSS VARIABLES ── */
     :root {
       --navy:      #0b0c1a;
       --navy-mid:  #131428;
@@ -45,7 +41,6 @@
       --transition: 0.35s ease;
     }
 
-    /* ── PAGES ── */
     .page { display: none; animation: fadeIn 0.6s ease; }
     .page.active { display: block; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
@@ -64,445 +59,123 @@
       align-items: center;
       justify-content: space-between;
     }
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.5px;
-    }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--gold); letter-spacing: 0.5px; }
     .logo span { color: var(--white); }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--muted);
-      transition: color var(--transition);
-      cursor: pointer;
-      padding: 4px 0;
-      border-bottom: 2px solid transparent;
-    }
-    .nav-links a:hover, .nav-links a.active {
-      color: var(--gold);
-      border-bottom-color: var(--gold);
-    }
-    .nav-cta {
-      background: linear-gradient(135deg, var(--purple), var(--purple-lt));
-      color: var(--white) !important;
-      border: none !important;
-      padding: 8px 22px !important;
-      border-radius: 50px !important;
-      font-weight: 500 !important;
-      transition: opacity var(--transition) !important;
-    }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--muted); transition: color var(--transition); cursor: pointer; padding: 4px 0; border-bottom: 2px solid transparent; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); border-bottom-color: var(--gold); }
+    .nav-cta { background: linear-gradient(135deg, var(--purple), var(--purple-lt)); color: var(--white) !important; border: none !important; padding: 8px 22px !important; border-radius: 50px !important; font-weight: 500 !important; transition: opacity var(--transition) !important; }
     .nav-cta:hover { opacity: 0.85 !important; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
     .hamburger span { width: 24px; height: 2px; background: var(--gold); border-radius: 2px; transition: var(--transition); }
 
-    /* ── SECTION WRAPPER ── */
     .section { padding: 100px 5% 80px; }
     .section:first-of-type { padding-top: 140px; }
     .container { max-width: 1140px; margin: 0 auto; }
 
-    /* ── TYPOGRAPHY ── */
-    .section-label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
+    .section-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
     h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.25; }
     h1 { font-size: clamp(2.4rem, 5vw, 4rem); color: var(--white); }
     h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); color: var(--white); margin-bottom: 1rem; }
     h3 { font-size: 1.2rem; color: var(--white); margin-bottom: 0.5rem; }
     p { color: var(--muted); line-height: 1.8; }
 
-    /* ── BUTTONS ── */
-    .btn {
-      display: inline-block;
-      padding: 14px 34px;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-      border: none;
-      font-family: 'Poppins', sans-serif;
-    }
+    .btn { display: inline-block; padding: 14px 34px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease; border: none; font-family: 'Poppins', sans-serif; }
     .btn:hover { transform: translateY(-2px); }
-    .btn-gold {
-      background: linear-gradient(135deg, var(--gold), var(--gold-lt));
-      color: #1a1000;
-      box-shadow: 0 4px 24px rgba(212,168,67,0.35);
-    }
+    .btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold-lt)); color: #1a1000; box-shadow: 0 4px 24px rgba(212,168,67,0.35); }
     .btn-gold:hover { box-shadow: 0 8px 32px rgba(212,168,67,0.5); }
-    .btn-outline {
-      background: transparent;
-      border: 1.5px solid var(--gold) !important;
-      color: var(--gold);
-    }
+    .btn-outline { background: transparent; border: 1.5px solid var(--gold) !important; color: var(--gold); }
     .btn-outline:hover { background: rgba(212,168,67,0.1); }
-    .btn-purple {
-      background: linear-gradient(135deg, var(--purple), var(--purple-lt));
-      color: var(--white);
-      box-shadow: 0 4px 20px rgba(107,63,160,0.4);
-    }
+    .btn-purple { background: linear-gradient(135deg, var(--purple), var(--purple-lt)); color: var(--white); box-shadow: 0 4px 20px rgba(107,63,160,0.4); }
     .btn-purple:hover { box-shadow: 0 8px 32px rgba(107,63,160,0.6); }
 
-    /* ── CARDS ── */
-    .card {
-      background: var(--navy-card);
-      border: 1px solid rgba(212,168,67,0.1);
-      border-radius: var(--radius);
-      padding: 32px 28px;
-      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(212,168,67,0.35);
-      box-shadow: 0 12px 48px rgba(107,63,160,0.2);
-    }
+    .card { background: var(--navy-card); border: 1px solid rgba(212,168,67,0.1); border-radius: var(--radius); padding: 32px 28px; transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition); }
+    .card:hover { transform: translateY(-6px); border-color: rgba(212,168,67,0.35); box-shadow: 0 12px 48px rgba(107,63,160,0.2); }
 
-    /* ── GRID LAYOUTS ── */
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
     .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
     .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
 
-    /* ─────────────────────────────────────────────
-       HOME PAGE
-    ───────────────────────────────────────────── */
-
     /* Hero */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding: 0 5%;
-    }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 70% 60% at 60% 40%, rgba(107,63,160,0.22) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 50% at 20% 70%, rgba(212,168,67,0.08) 0%, transparent 60%),
-        #0b0c1a;
-      z-index: 0;
-    }
-    /* Stars canvas */
-    #starCanvas {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      opacity: 0.8;
-    }
+    .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 0 5%; }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 60% 40%, rgba(107,63,160,0.22) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 20% 70%, rgba(212,168,67,0.08) 0%, transparent 60%), #0b0c1a; z-index: 0; }
+    #starCanvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.8; }
     .hero-content { position: relative; z-index: 2; max-width: 640px; }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(212,168,67,0.12);
-      border: 1px solid rgba(212,168,67,0.3);
-      border-radius: 50px;
-      padding: 6px 18px;
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--gold);
-      letter-spacing: 1px;
-      margin-bottom: 24px;
-    }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(212,168,67,0.12); border: 1px solid rgba(212,168,67,0.3); border-radius: 50px; padding: 6px 18px; font-size: 0.78rem; font-weight: 500; color: var(--gold); letter-spacing: 1px; margin-bottom: 24px; }
     .hero h1 { margin-bottom: 20px; }
     .hero h1 em { font-style: italic; color: var(--gold); }
-    .hero-sub {
-      font-size: 1.05rem;
-      color: var(--muted);
-      margin-bottom: 36px;
-      max-width: 480px;
-      line-height: 1.75;
-    }
+    .hero-sub { font-size: 1.05rem; color: var(--muted); margin-bottom: 36px; max-width: 480px; line-height: 1.75; }
     .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
-    .hero-graphic {
-      position: absolute;
-      right: 5%;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1;
-      width: min(420px, 40vw);
-    }
-    .zodiac-wheel {
-      width: 100%;
-      aspect-ratio: 1;
-      position: relative;
-      animation: slowSpin 60s linear infinite;
-    }
+    .hero-graphic { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); z-index: 1; width: min(420px, 40vw); }
+    .zodiac-wheel { width: 100%; aspect-ratio: 1; position: relative; animation: slowSpin 60s linear infinite; }
     @keyframes slowSpin { to { transform: rotate(360deg); } }
 
-    /* Trust strip */
-    .trust-strip {
-      padding: 32px 5%;
-      background: var(--navy-mid);
-      border-top: 1px solid rgba(212,168,67,0.08);
-      border-bottom: 1px solid rgba(212,168,67,0.08);
-    }
-    .trust-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
+    .trust-strip { padding: 32px 5%; background: var(--navy-mid); border-top: 1px solid rgba(212,168,67,0.08); border-bottom: 1px solid rgba(212,168,67,0.08); }
+    .trust-inner { max-width: 1140px; margin: 0 auto; display: flex; align-items: center; justify-content: space-around; gap: 24px; flex-wrap: wrap; }
     .trust-item { text-align: center; }
-    .trust-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--gold);
-    }
+    .trust-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--gold); }
     .trust-label { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
 
-    /* Services preview */
-    .service-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, rgba(107,63,160,0.3), rgba(212,168,67,0.15));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 18px;
-    }
+    .service-icon { width: 52px; height: 52px; border-radius: 12px; background: linear-gradient(135deg, rgba(107,63,160,0.3), rgba(212,168,67,0.15)); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px; }
 
-    /* Testimonial */
     .testimonial-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .testimonial {
-      background: var(--navy-card);
-      border: 1px solid rgba(212,168,67,0.1);
-      border-radius: var(--radius);
-      padding: 28px;
-    }
+    .testimonial { background: var(--navy-card); border: 1px solid rgba(212,168,67,0.1); border-radius: var(--radius); padding: 28px; }
     .t-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 14px; }
     .t-text { font-style: italic; color: var(--muted); line-height: 1.7; margin-bottom: 16px; font-size: 0.95rem; }
     .t-author { font-weight: 600; font-size: 0.85rem; color: var(--white); }
     .t-meta { font-size: 0.78rem; color: var(--muted); }
 
-    /* CTA Banner */
-    .cta-banner {
-      background: linear-gradient(135deg, #1a0e30, #0f1635);
-      border: 1px solid rgba(212,168,67,0.2);
-      border-radius: 20px;
-      padding: 60px 40px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-banner::before {
-      content: '';
-      position: absolute;
-      top: -60px; right: -60px;
-      width: 220px; height: 220px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(212,168,67,0.12), transparent 70%);
-    }
+    .cta-banner { background: linear-gradient(135deg, #1a0e30, #0f1635); border: 1px solid rgba(212,168,67,0.2); border-radius: 20px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; }
+    .cta-banner::before { content: ''; position: absolute; top: -60px; right: -60px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(212,168,67,0.12), transparent 70%); }
     .cta-banner h2 { margin-bottom: 12px; }
     .cta-banner p { margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy-mid);
-      border-top: 1px solid rgba(212,168,67,0.1);
-      padding: 60px 5% 32px;
-    }
-    .footer-grid {
-      max-width: 1140px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
-    }
+    footer { background: var(--navy-mid); border-top: 1px solid rgba(212,168,67,0.1); padding: 60px 5% 32px; }
+    .footer-grid { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
     .footer-brand p { font-size: 0.88rem; margin-top: 14px; max-width: 260px; }
     .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--gold); }
     .footer-col h4 { font-size: 0.9rem; font-weight: 600; color: var(--white); margin-bottom: 16px; }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .footer-col ul li a, .footer-col ul li { font-size: 0.85rem; color: var(--muted); cursor: pointer; }
     .footer-col ul li a:hover { color: var(--gold); }
-    .footer-bottom {
-      max-width: 1140px;
-      margin: 0 auto;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding-top: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+    .footer-bottom { max-width: 1140px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
     .footer-bottom p { font-size: 0.8rem; }
     .footer-socials { display: flex; gap: 12px; }
-    .social-dot {
-      width: 34px; height: 34px;
-      border-radius: 50%;
-      border: 1px solid rgba(212,168,67,0.25);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: background var(--transition), border-color var(--transition);
-    }
+    .social-dot { width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(212,168,67,0.25); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; cursor: pointer; transition: background var(--transition), border-color var(--transition); }
     .social-dot:hover { background: rgba(212,168,67,0.15); border-color: var(--gold); }
 
-    /* ─────────────────────────────────────────────
-       ABOUT PAGE
-    ───────────────────────────────────────────── */
-    .about-hero {
-      padding: 140px 5% 80px;
-      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(107,63,160,0.2), transparent 70%);
-      text-align: center;
-    }
+    /* About */
+    .about-hero { padding: 140px 5% 80px; background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(107,63,160,0.2), transparent 70%); text-align: center; }
     .about-hero p { max-width: 620px; margin: 16px auto 0; font-size: 1.05rem; }
-
-    .about-profile {
-      display: grid;
-      grid-template-columns: 380px 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .profile-img-wrap {
-      position: relative;
-    }
-    .profile-img {
-      width: 100%;
-      aspect-ratio: 3/4;
-      border-radius: 20px;
-      background: linear-gradient(160deg, #1e1040, #0d1535);
-      border: 1px solid rgba(212,168,67,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 7rem;
-      overflow: hidden;
-    }
-    .profile-badge {
-      position: absolute;
-      bottom: -18px; right: -18px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-lt));
-      color: #1a1000;
-      border-radius: 14px;
-      padding: 14px 18px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      text-align: center;
-      box-shadow: 0 8px 24px rgba(212,168,67,0.3);
-    }
+    .about-profile { display: grid; grid-template-columns: 380px 1fr; gap: 60px; align-items: center; }
+    .profile-img-wrap { position: relative; }
+    .profile-img { width: 100%; aspect-ratio: 3/4; border-radius: 20px; background: linear-gradient(160deg, #1e1040, #0d1535); border: 1px solid rgba(212,168,67,0.2); display: flex; align-items: center; justify-content: center; font-size: 7rem; overflow: hidden; }
+    .profile-badge { position: absolute; bottom: -18px; right: -18px; background: linear-gradient(135deg, var(--gold), var(--gold-lt)); color: #1a1000; border-radius: 14px; padding: 14px 18px; font-weight: 700; font-size: 0.85rem; text-align: center; box-shadow: 0 8px 24px rgba(212,168,67,0.3); }
     .profile-badge span { display: block; font-size: 1.4rem; font-family: 'Playfair Display', serif; }
-
     .about-text p { margin-bottom: 18px; }
     .about-text h3 { margin-top: 28px; margin-bottom: 10px; }
-
     .mvv-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
-    .mvv-card {
-      background: var(--navy-card);
-      border: 1px solid rgba(212,168,67,0.12);
-      border-radius: var(--radius);
-      padding: 28px;
-      border-top: 3px solid var(--gold);
-    }
+    .mvv-card { background: var(--navy-card); border: 1px solid rgba(212,168,67,0.12); border-radius: var(--radius); padding: 28px; border-top: 3px solid var(--gold); }
     .mvv-card h3 { color: var(--gold); margin-bottom: 10px; }
 
-    /* ─────────────────────────────────────────────
-       SERVICES PAGE
-    ───────────────────────────────────────────── */
-    .services-hero {
-      padding: 140px 5% 80px;
-      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(107,63,160,0.18), transparent 70%);
-      text-align: center;
-    }
+    /* Services */
+    .services-hero { padding: 140px 5% 80px; background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(107,63,160,0.18), transparent 70%); text-align: center; }
     .services-hero p { max-width: 580px; margin: 16px auto 0; }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     .srv-card { position: relative; overflow: hidden; }
-    .srv-card::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(180deg, var(--gold), var(--purple));
-      border-radius: 0;
-    }
-    .srv-icon {
-      font-size: 2.2rem;
-      margin-bottom: 16px;
-    }
-    .srv-tag {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
+    .srv-card::after { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, var(--gold), var(--purple)); border-radius: 0; }
+    .srv-icon { font-size: 2.2rem; margin-bottom: 16px; }
+    .srv-tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
     .srv-card h3 { margin-bottom: 10px; }
-
-    /* Process */
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 24px;
-      position: relative;
-    }
+    .process-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; position: relative; }
     .step { text-align: center; padding: 32px 20px; }
-    .step-num {
-      width: 48px; height: 48px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--purple), var(--purple-lt));
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--white);
-      margin: 0 auto 16px;
-    }
+    .step-num { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--purple), var(--purple-lt)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--white); margin: 0 auto 16px; }
     .step h3 { font-size: 1rem; margin-bottom: 8px; }
-
-    /* Pricing */
     .price-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
-    .price-card {
-      background: var(--navy-card);
-      border: 1px solid rgba(212,168,67,0.12);
-      border-radius: var(--radius);
-      padding: 36px 28px;
-      text-align: center;
-      transition: transform var(--transition), border-color var(--transition);
-    }
+    .price-card { background: var(--navy-card); border: 1px solid rgba(212,168,67,0.12); border-radius: var(--radius); padding: 36px 28px; text-align: center; transition: transform var(--transition), border-color var(--transition); }
     .price-card:hover { transform: translateY(-6px); border-color: var(--gold); }
-    .price-card.featured {
-      border-color: var(--gold);
-      background: linear-gradient(160deg, #1e1545, #111835);
-      position: relative;
-    }
-    .price-card.featured::before {
-      content: 'Most Popular';
-      position: absolute;
-      top: -14px; left: 50%; transform: translateX(-50%);
-      background: linear-gradient(135deg, var(--gold), var(--gold-lt));
-      color: #1a1000;
-      padding: 4px 18px;
-      border-radius: 50px;
-      font-size: 0.75rem;
-      font-weight: 700;
-    }
+    .price-card.featured { border-color: var(--gold); background: linear-gradient(160deg, #1e1545, #111835); position: relative; }
+    .price-card.featured::before { content: 'Most Popular'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--gold), var(--gold-lt)); color: #1a1000; padding: 4px 18px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; }
     .price-plan { font-size: 0.8rem; color: var(--gold); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
     .price-amount { font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--white); margin: 12px 0; }
     .price-amount sub { font-size: 1rem; font-family: 'Poppins', sans-serif; color: var(--muted); }
@@ -510,129 +183,226 @@
     .price-features li { font-size: 0.88rem; color: var(--muted); display: flex; gap: 8px; align-items: flex-start; }
     .price-features li::before { content: '✦'; color: var(--gold); font-size: 0.7rem; margin-top: 3px; flex-shrink: 0; }
 
-    /* ─────────────────────────────────────────────
-       BLOG PAGE
-    ───────────────────────────────────────────── */
-    .blog-hero {
-      padding: 140px 5% 80px;
-      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(107,63,160,0.18), transparent 70%);
-      text-align: center;
-    }
+    /* Blog */
+    .blog-hero { padding: 140px 5% 80px; background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(107,63,160,0.18), transparent 70%); text-align: center; }
     .blog-hero p { max-width: 560px; margin: 16px auto 0; }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-    .blog-card {
-      background: var(--navy-card);
-      border: 1px solid rgba(212,168,67,0.1);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-    }
-    .blog-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(212,168,67,0.3);
-      box-shadow: 0 12px 40px rgba(107,63,160,0.2);
-    }
-    .blog-thumb {
-      width: 100%;
-      aspect-ratio: 16/9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      position: relative;
-      overflow: hidden;
-    }
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .blog-card { background: var(--navy-card); border: 1px solid rgba(212,168,67,0.1); border-radius: var(--radius); overflow: hidden; transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition); }
+    .blog-card:hover { transform: translateY(-6px); border-color: rgba(212,168,67,0.3); box-shadow: 0 12px 40px rgba(107,63,160,0.2); }
+    .blog-thumb { width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; font-size: 3rem; position: relative; overflow: hidden; }
     .blog-body { padding: 24px; }
-    .blog-cat {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
+    .blog-cat { font-size: 0.72rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
     .blog-card h3 { font-size: 1.05rem; margin-bottom: 10px; line-height: 1.4; }
     .blog-card p { font-size: 0.88rem; margin-bottom: 20px; }
     .blog-meta { display: flex; align-items: center; justify-content: space-between; }
     .blog-date { font-size: 0.78rem; color: var(--muted); }
-    .blog-readmore {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--gold);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      transition: gap var(--transition);
-    }
+    .blog-readmore { font-size: 0.82rem; font-weight: 600; color: var(--gold); cursor: pointer; display: flex; align-items: center; gap: 4px; transition: gap var(--transition); }
     .blog-readmore:hover { gap: 8px; }
-
-    /* Newsletter */
-    .newsletter-wrap {
-      background: linear-gradient(135deg, #1a0e30, #0f1635);
-      border: 1px solid rgba(212,168,67,0.18);
-      border-radius: 20px;
-      padding: 56px 40px;
-      text-align: center;
-    }
+    .newsletter-wrap { background: linear-gradient(135deg, #1a0e30, #0f1635); border: 1px solid rgba(212,168,67,0.18); border-radius: 20px; padding: 56px 40px; text-align: center; }
     .newsletter-wrap h2 { margin-bottom: 12px; }
     .newsletter-wrap p { margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
-    .newsletter-form {
+    .newsletter-form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; }
+    .newsletter-form input { flex: 1; background: rgba(255,255,255,0.06); border: 1px solid rgba(212,168,67,0.2); border-radius: 50px; padding: 12px 20px; color: var(--white); font-family: 'Poppins', sans-serif; font-size: 0.9rem; outline: none; transition: border-color var(--transition); }
+    .newsletter-form input:focus { border-color: var(--gold); }
+    .newsletter-form input::placeholder { color: var(--muted); }
+    .divider { width: 64px; height: 3px; background: linear-gradient(90deg, var(--purple), var(--gold)); border-radius: 2px; margin-bottom: 24px; }
+
+    .mobile-nav { display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: rgba(11,12,26,0.97); z-index: 999; padding: 40px 5%; flex-direction: column; gap: 0; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 1.1rem; color: var(--muted); cursor: pointer; display: block; }
+    .mobile-nav a:hover, .mobile-nav a.active { color: var(--gold); }
+    .mobile-nav .btn { margin-top: 24px; width: fit-content; }
+
+    /* ════════════════════════════════════
+       BOOKING MODAL
+    ════════════════════════════════════ */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 5, 18, 0.92);
+      backdrop-filter: blur(12px);
+      z-index: 9999;
       display: flex;
-      gap: 12px;
-      max-width: 480px;
-      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
     }
-    .newsletter-form input {
-      flex: 1;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(212,168,67,0.2);
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal {
+      background: linear-gradient(160deg, #14152e, #0e1025);
+      border: 1px solid rgba(212,168,67,0.25);
+      border-radius: 24px;
+      width: 100%;
+      max-width: 680px;
+      max-height: 92vh;
+      overflow-y: auto;
+      position: relative;
+      transform: translateY(30px) scale(0.97);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(212,168,67,0.08);
+    }
+    .modal-overlay.active .modal {
+      transform: translateY(0) scale(1);
+    }
+    .modal::-webkit-scrollbar { width: 4px; }
+    .modal::-webkit-scrollbar-track { background: transparent; }
+    .modal::-webkit-scrollbar-thumb { background: rgba(212,168,67,0.3); border-radius: 2px; }
+
+    .modal-header {
+      padding: 36px 40px 24px;
+      border-bottom: 1px solid rgba(212,168,67,0.1);
+      position: relative;
+    }
+    .modal-stars {
+      font-size: 1.4rem;
+      letter-spacing: 4px;
+      color: var(--gold);
+      margin-bottom: 10px;
+      opacity: 0.7;
+    }
+    .modal-header h2 {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+    }
+    .modal-header p {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .modal-selected-service {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      background: rgba(212,168,67,0.1);
+      border: 1px solid rgba(212,168,67,0.25);
       border-radius: 50px;
-      padding: 12px 20px;
+      padding: 5px 14px;
+      font-size: 0.78rem;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px; right: 20px;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--muted);
+      font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .modal-close:hover { background: rgba(212,168,67,0.15); color: var(--gold); border-color: rgba(212,168,67,0.4); }
+
+    .modal-body { padding: 28px 40px 36px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.85;
+    }
+    .form-control {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(212,168,67,0.15);
+      border-radius: 10px;
+      padding: 12px 16px;
       color: var(--white);
       font-family: 'Poppins', sans-serif;
       font-size: 0.9rem;
       outline: none;
-      transition: border-color var(--transition);
+      transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+      width: 100%;
     }
-    .newsletter-form input:focus { border-color: var(--gold); }
-    .newsletter-form input::placeholder { color: var(--muted); }
+    .form-control:focus {
+      border-color: rgba(212,168,67,0.5);
+      background: rgba(212,168,67,0.04);
+      box-shadow: 0 0 0 3px rgba(212,168,67,0.08);
+    }
+    .form-control::placeholder { color: rgba(149,144,176,0.6); }
+    select.form-control option { background: #14152e; color: var(--white); }
+    textarea.form-control { resize: vertical; min-height: 90px; }
 
-    /* ── DIVIDER ── */
-    .divider {
-      width: 64px; height: 3px;
-      background: linear-gradient(90deg, var(--purple), var(--gold));
-      border-radius: 2px;
-      margin-bottom: 24px;
+    .form-divider {
+      grid-column: 1 / -1;
+      height: 1px;
+      background: rgba(212,168,67,0.1);
+      margin: 8px 0;
+    }
+    .form-section-label {
+      grid-column: 1 / -1;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--purple-lt);
+      padding-top: 4px;
     }
 
-    /* ── MOBILE NAV DRAWER ── */
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      top: 72px; left: 0; right: 0; bottom: 0;
-      background: rgba(11,12,26,0.97);
-      z-index: 999;
-      padding: 40px 5%;
+    .modal-footer {
+      padding: 0 40px 36px;
+      display: flex;
       flex-direction: column;
-      gap: 0;
+      gap: 14px;
     }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a {
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      font-size: 1.1rem;
-      color: var(--muted);
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: white;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
       cursor: pointer;
-      display: block;
+      border: none;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 6px 28px rgba(37,211,102,0.3);
+      text-decoration: none;
     }
-    .mobile-nav a:hover, .mobile-nav a.active { color: var(--gold); }
-    .mobile-nav .btn { margin-top: 24px; width: fit-content; }
+    .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(37,211,102,0.45); }
+    .btn-whatsapp svg { width: 22px; height: 22px; fill: white; flex-shrink: 0; }
+    .modal-disclaimer {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+      opacity: 0.7;
+    }
+    .form-required { color: rgba(212,168,67,0.7); margin-left: 2px; }
+    .field-error {
+      font-size: 0.72rem;
+      color: #ff7c7c;
+      margin-top: 2px;
+      display: none;
+    }
+    .form-control.error { border-color: rgba(255,100,100,0.5); }
+
+    /* Success state */
+    .modal-success {
+      display: none;
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .modal-success.show { display: block; }
+    .success-icon { font-size: 3.5rem; margin-bottom: 20px; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.08)} }
+    .modal-success h3 { font-size: 1.6rem; margin-bottom: 12px; }
+    .modal-success p { max-width: 380px; margin: 0 auto; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
@@ -652,18 +422,15 @@
       .process-steps { grid-template-columns: 1fr; }
       .newsletter-form { flex-direction: column; }
       .footer-bottom { flex-direction: column; text-align: center; }
+      .form-grid { grid-template-columns: 1fr; }
+      .modal-header, .modal-body, .modal-footer { padding-left: 24px; padding-right: 24px; }
     }
     @media (max-width: 480px) {
       .hero-btns { flex-direction: column; }
       .cta-banner { padding: 40px 24px; }
     }
 
-    /* ── SCROLL ANIMATION ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
@@ -673,6 +440,138 @@
 </head>
 <body>
 
+<!-- ════════ BOOKING MODAL ════════ -->
+<div class="modal-overlay" id="bookingModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+    <div id="modalFormContent">
+      <div class="modal-header">
+        <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+        <div class="modal-stars">✦ ✦ ✦</div>
+        <h2 id="modalTitle">Book Your Consultation</h2>
+        <p>Fill in your details below and we'll confirm your session within 24 hours.</p>
+        <div class="modal-selected-service" id="selectedServiceBadge">✦ <span id="selectedServiceName">Consultation</span></div>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-grid" id="bookingForm">
+
+          <div class="form-section-label">Personal Information</div>
+
+          <div class="form-group">
+            <label class="form-label" for="f-name">Full Name <span class="form-required">*</span></label>
+            <input type="text" id="f-name" class="form-control" placeholder="Your full name" />
+            <span class="field-error" id="err-name">Please enter your name.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="f-email">Email Address <span class="form-required">*</span></label>
+            <input type="email" id="f-email" class="form-control" placeholder="you@email.com" />
+            <span class="field-error" id="err-email">Please enter a valid email.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="f-phone">Phone / WhatsApp <span class="form-required">*</span></label>
+            <input type="tel" id="f-phone" class="form-control" placeholder="+91 98765 43210" />
+            <span class="field-error" id="err-phone">Please enter your phone number.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="f-dob">Date of Birth <span class="form-required">*</span></label>
+            <input type="date" id="f-dob" class="form-control" />
+            <span class="field-error" id="err-dob">Please select your date of birth.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="f-tob">Time of Birth</label>
+            <input type="time" id="f-tob" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="f-gender">Gender</label>
+            <select id="f-gender" class="form-control">
+              <option value="">— Select —</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Non-binary">Non-binary</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+
+          <div class="form-divider"></div>
+          <div class="form-section-label">Birth Location & Address</div>
+
+          <div class="form-group full">
+            <label class="form-label" for="f-birthplace">Birth City / Place of Birth <span class="form-required">*</span></label>
+            <input type="text" id="f-birthplace" class="form-control" placeholder="e.g. Mumbai, Maharashtra, India" />
+            <span class="field-error" id="err-birthplace">Please enter your birth place.</span>
+          </div>
+
+          <div class="form-group full">
+            <label class="form-label" for="f-address">Current Address / City</label>
+            <input type="text" id="f-address" class="form-control" placeholder="City, Country" />
+          </div>
+
+          <div class="form-divider"></div>
+          <div class="form-section-label">Your Session</div>
+
+          <div class="form-group">
+            <label class="form-label" for="f-service">Service Required <span class="form-required">*</span></label>
+            <select id="f-service" class="form-control">
+              <option value="">— Select a service —</option>
+              <option value="Birth Chart Analysis">🌟 Birth Chart Analysis</option>
+              <option value="Career & Vocational Guidance">💼 Career & Vocational Guidance</option>
+              <option value="Marriage Compatibility">💍 Marriage Compatibility</option>
+              <option value="Relationship Consultation">❤️ Relationship Consultation</option>
+              <option value="Personal Life Guidance">🧭 Personal Life Guidance</option>
+              <option value="Annual Forecast Reading">📅 Annual Forecast Reading</option>
+              <option value="Karmic & Past Life Astrology">🔮 Karmic & Past Life Astrology</option>
+              <option value="Child Astrology Reading">👶 Child Astrology Reading</option>
+              <option value="Business Astrology">🏢 Business Astrology</option>
+            </select>
+            <span class="field-error" id="err-service">Please select a service.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="f-package">Package</label>
+            <select id="f-package" class="form-control">
+              <option value="">— Select package —</option>
+              <option value="Natal Essence ($120 / 45 min)">Natal Essence — $120 / 45 min</option>
+              <option value="Deep Dive ($220 / 90 min)">Deep Dive — $220 / 90 min</option>
+              <option value="Full Cosmic Portrait ($380 / 2 hrs)">Full Cosmic Portrait — $380 / 2 hrs</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label class="form-label" for="f-message">Your Question / Focus for the Session</label>
+            <textarea id="f-message" class="form-control" placeholder="Share what you'd most like guidance on — the more context you provide, the more personalised your reading will be…"></textarea>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a class="btn-whatsapp" id="whatsappSubmitBtn" href="#" target="_blank">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Send Booking Request via WhatsApp
+        </a>
+        <p class="modal-disclaimer">By submitting, you consent to being contacted via WhatsApp. Your information is kept strictly confidential.</p>
+      </div>
+    </div>
+
+    <!-- Success screen -->
+    <div class="modal-success" id="modalSuccess">
+      <div class="success-icon">🌟</div>
+      <h3>Request Sent!</h3>
+      <p style="color: var(--muted); margin-top:10px;">Your WhatsApp has opened with your booking details. Ariana will confirm your session within 24 hours.</p>
+      <button class="btn btn-outline" style="margin-top:28px;" id="successClose">Close</button>
+    </div>
+
+  </div>
+</div>
+
 <!-- ════════ NAVBAR ════════ -->
 <nav id="navbar">
   <div class="logo">Celestia<span>Astrology</span></div>
@@ -681,7 +580,7 @@
     <li><a data-page="about">About</a></li>
     <li><a data-page="services">Services</a></li>
     <li><a data-page="blog">Blog</a></li>
-    <li><a class="nav-cta" data-page="services">Book Consultation</a></li>
+    <li><a class="nav-cta" onclick="openBookingModal('Consultation')">Book Consultation</a></li>
   </ul>
   <div class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
@@ -694,15 +593,12 @@
   <a data-page="about">About</a>
   <a data-page="services">Services</a>
   <a data-page="blog">Blog</a>
-  <a class="btn btn-gold" data-page="services" style="margin-top:24px;">Book Consultation</a>
+  <a class="btn btn-gold" onclick="openBookingModal('Consultation')" style="margin-top:24px;">Book Consultation</a>
 </div>
 
-<!-- ════════════════════════════════════════════
-     HOME PAGE
-════════════════════════════════════════════ -->
+<!-- ════════════════ HOME PAGE ════════════════ -->
 <div id="home" class="page active">
 
-  <!-- Hero -->
   <section class="hero">
     <div class="hero-bg"></div>
     <canvas id="starCanvas"></canvas>
@@ -711,7 +607,7 @@
       <h1>Read the <em>Stars</em>,<br>Illuminate Your Path</h1>
       <p class="hero-sub">Ancient wisdom meets modern insight. Celestia Astrology offers personalised chart readings and life guidance rooted in Vedic and Western traditions to help you navigate every chapter with clarity.</p>
       <div class="hero-btns">
-        <a class="btn btn-gold" data-page="services">Book a Consultation</a>
+        <a class="btn btn-gold" onclick="openBookingModal('Consultation')">Book a Consultation</a>
         <a class="btn btn-outline" data-page="about">Meet the Astrologer</a>
       </div>
     </div>
@@ -721,7 +617,6 @@
         <circle cx="200" cy="200" r="155" fill="none" stroke="#6b3fa0" stroke-width="0.5"/>
         <circle cx="200" cy="200" r="110" fill="none" stroke="#d4a843" stroke-width="0.5"/>
         <circle cx="200" cy="200" r="60"  fill="none" stroke="#6b3fa0" stroke-width="1"/>
-        <!-- 12 spokes -->
         <g stroke="#d4a843" stroke-width="0.6" opacity="0.6">
           <line x1="200" y1="10"  x2="200" y2="390"/>
           <line x1="10"  y1="200" x2="390" y2="200"/>
@@ -733,50 +628,26 @@
           <line x1="200" y1="10"  x2="200" y2="390" transform="rotate(120 200 200)"/>
           <line x1="200" y1="10"  x2="200" y2="390" transform="rotate(150 200 200)"/>
         </g>
-        <!-- Zodiac symbols around the wheel -->
         <g font-size="16" fill="#d4a843" text-anchor="middle" font-family="serif">
-          <text x="200" y="24">♈</text>
-          <text x="291" y="50">♉</text>
-          <text x="357" y="113">♊</text>
-          <text x="382" y="208">♋</text>
-          <text x="355" y="303">♌</text>
-          <text x="290" y="362">♍</text>
-          <text x="200" y="390">♎</text>
-          <text x="113" y="362">♏</text>
-          <text x="47"  y="303">♐</text>
-          <text x="20"  y="208">♑</text>
-          <text x="48"  y="113">♒</text>
-          <text x="112" y="50">♓</text>
+          <text x="200" y="24">♈</text><text x="291" y="50">♉</text><text x="357" y="113">♊</text>
+          <text x="382" y="208">♋</text><text x="355" y="303">♌</text><text x="290" y="362">♍</text>
+          <text x="200" y="390">♎</text><text x="113" y="362">♏</text><text x="47"  y="303">♐</text>
+          <text x="20"  y="208">♑</text><text x="48"  y="113">♒</text><text x="112" y="50">♓</text>
         </g>
-        <!-- Decorative star center -->
         <text x="200" y="210" font-size="28" fill="#d4a843" text-anchor="middle" font-family="serif">✦</text>
       </svg>
     </div>
   </section>
 
-  <!-- Trust Strip -->
   <div class="trust-strip">
     <div class="trust-inner">
-      <div class="trust-item">
-        <div class="trust-num">15+</div>
-        <div class="trust-label">Years of Experience</div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-num">3,200+</div>
-        <div class="trust-label">Consultations Delivered</div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-num">42+</div>
-        <div class="trust-label">Countries Reached</div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-num">98%</div>
-        <div class="trust-label">Client Satisfaction Rate</div>
-      </div>
+      <div class="trust-item"><div class="trust-num">15+</div><div class="trust-label">Years of Experience</div></div>
+      <div class="trust-item"><div class="trust-num">3,200+</div><div class="trust-label">Consultations Delivered</div></div>
+      <div class="trust-item"><div class="trust-num">42+</div><div class="trust-label">Countries Reached</div></div>
+      <div class="trust-item"><div class="trust-num">98%</div><div class="trust-label">Client Satisfaction Rate</div></div>
     </div>
   </div>
 
-  <!-- Services Preview -->
   <section class="section">
     <div class="container">
       <div class="reveal">
@@ -786,26 +657,10 @@
         <p style="max-width:560px; margin-bottom:48px;">Each reading is personally crafted — never templated. We listen first, then consult the stars to offer you insight that is specific, compassionate, and actionable.</p>
       </div>
       <div class="grid-4">
-        <div class="card reveal reveal-delay-1">
-          <div class="service-icon">🌟</div>
-          <h3>Birth Chart Analysis</h3>
-          <p style="font-size:0.88rem; margin-top:8px;">Uncover the blueprint of your soul — your strengths, shadow sides, karmic patterns, and life purpose mapped through your natal chart.</p>
-        </div>
-        <div class="card reveal reveal-delay-2">
-          <div class="service-icon">💼</div>
-          <h3>Career Guidance</h3>
-          <p style="font-size:0.88rem; margin-top:8px;">Align your professional choices with planetary rhythms to find work that fuels both your ambition and your spirit.</p>
-        </div>
-        <div class="card reveal reveal-delay-3">
-          <div class="service-icon">💍</div>
-          <h3>Marriage Compatibility</h3>
-          <p style="font-size:0.88rem; margin-top:8px;">A deep synastry reading exploring emotional, intellectual, and karmic compatibility between two souls.</p>
-        </div>
-        <div class="card reveal reveal-delay-4">
-          <div class="service-icon">🌙</div>
-          <h3>Personal Life Guidance</h3>
-          <p style="font-size:0.88rem; margin-top:8px;">Navigate life transitions, spiritual crises, and pivotal decisions with clarity through personalised astrological counsel.</p>
-        </div>
+        <div class="card reveal reveal-delay-1"><div class="service-icon">🌟</div><h3>Birth Chart Analysis</h3><p style="font-size:0.88rem; margin-top:8px;">Uncover the blueprint of your soul — your strengths, shadow sides, karmic patterns, and life purpose mapped through your natal chart.</p></div>
+        <div class="card reveal reveal-delay-2"><div class="service-icon">💼</div><h3>Career Guidance</h3><p style="font-size:0.88rem; margin-top:8px;">Align your professional choices with planetary rhythms to find work that fuels both your ambition and your spirit.</p></div>
+        <div class="card reveal reveal-delay-3"><div class="service-icon">💍</div><h3>Marriage Compatibility</h3><p style="font-size:0.88rem; margin-top:8px;">A deep synastry reading exploring emotional, intellectual, and karmic compatibility between two souls.</p></div>
+        <div class="card reveal reveal-delay-4"><div class="service-icon">🌙</div><h3>Personal Life Guidance</h3><p style="font-size:0.88rem; margin-top:8px;">Navigate life transitions, spiritual crises, and pivotal decisions with clarity through personalised astrological counsel.</p></div>
       </div>
       <div style="text-align:center; margin-top:40px;">
         <a class="btn btn-purple reveal" data-page="services">View All Services</a>
@@ -813,7 +668,6 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
   <section class="section" style="background: var(--navy-mid);">
     <div class="container">
       <div class="reveal" style="text-align:center; margin-bottom:48px;">
@@ -821,116 +675,49 @@
         <h2>Words From the Stars' Witnesses</h2>
       </div>
       <div class="testimonial-wrap">
-        <div class="testimonial reveal">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text">"My birth chart reading with Celestia Astrology changed how I understand myself entirely. The level of accuracy and compassion in the reading was unlike anything I had experienced before."</p>
-          <div class="t-author">Priya Sharma</div>
-          <div class="t-meta">Software Engineer · Mumbai, India</div>
-        </div>
-        <div class="testimonial reveal reveal-delay-1">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text">"I came for career guidance during the most uncertain period of my professional life. The planetary timing advice helped me make a decision that turned out to be the best of my career."</p>
-          <div class="t-author">James Whitfield</div>
-          <div class="t-meta">Marketing Director · London, UK</div>
-        </div>
-        <div class="testimonial reveal reveal-delay-2">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text">"The marriage compatibility reading gave my partner and me such a profound understanding of our dynamic. It did not tell us what to do — it helped us understand each other better."</p>
-          <div class="t-author">Nour Al-Rashid</div>
-          <div class="t-meta">Educator · Dubai, UAE</div>
-        </div>
-        <div class="testimonial reveal reveal-delay-3">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text">"I was sceptical at first, but the level of detail and insight in my personal life reading was extraordinary. I now consult Celestia every major season of my life."</p>
-          <div class="t-author">Sofia Mendes</div>
-          <div class="t-meta">Entrepreneur · São Paulo, Brazil</div>
-        </div>
+        <div class="testimonial reveal"><div class="t-stars">★★★★★</div><p class="t-text">"My birth chart reading with Celestia Astrology changed how I understand myself entirely. The level of accuracy and compassion in the reading was unlike anything I had experienced before."</p><div class="t-author">Priya Sharma</div><div class="t-meta">Software Engineer · Mumbai, India</div></div>
+        <div class="testimonial reveal reveal-delay-1"><div class="t-stars">★★★★★</div><p class="t-text">"I came for career guidance during the most uncertain period of my professional life. The planetary timing advice helped me make a decision that turned out to be the best of my career."</p><div class="t-author">James Whitfield</div><div class="t-meta">Marketing Director · London, UK</div></div>
+        <div class="testimonial reveal reveal-delay-2"><div class="t-stars">★★★★★</div><p class="t-text">"The marriage compatibility reading gave my partner and me such a profound understanding of our dynamic. It did not tell us what to do — it helped us understand each other better."</p><div class="t-author">Nour Al-Rashid</div><div class="t-meta">Educator · Dubai, UAE</div></div>
+        <div class="testimonial reveal reveal-delay-3"><div class="t-stars">★★★★★</div><p class="t-text">"I was sceptical at first, but the level of detail and insight in my personal life reading was extraordinary. I now consult Celestia every major season of my life."</p><div class="t-author">Sofia Mendes</div><div class="t-meta">Entrepreneur · São Paulo, Brazil</div></div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="section">
     <div class="container">
       <div class="cta-banner reveal">
         <div class="section-label">Begin Your Journey</div>
         <h2>Your Stars Are Ready to Speak</h2>
         <p>Book a private consultation and receive a deeply personalised reading crafted with fifteen years of dedicated astrological practice.</p>
-        <a class="btn btn-gold" data-page="services">Book Your Consultation</a>
+        <a class="btn btn-gold" onclick="openBookingModal('Consultation')">Book Your Consultation</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">CelestiaAstrology</div>
-        <p>Ancient cosmic wisdom interpreted with care and precision to guide you through life's most meaningful decisions.</p>
-        <div class="footer-socials" style="margin-top:20px;">
-          <div class="social-dot">𝕏</div>
-          <div class="social-dot">in</div>
-          <div class="social-dot">ig</div>
-          <div class="social-dot">▶</div>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <ul>
-          <li><a data-page="home">Home</a></li>
-          <li><a data-page="about">About</a></li>
-          <li><a data-page="services">Services</a></li>
-          <li><a data-page="blog">Blog</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li>Birth Chart Analysis</li>
-          <li>Career Guidance</li>
-          <li>Marriage Compatibility</li>
-          <li>Relationship Consultation</li>
-          <li>Personal Guidance</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li>hello@celestiaastrology.com</li>
-          <li>+44 20 7946 0831</li>
-          <li>London, United Kingdom</li>
-          <li>Mon–Sat: 9 AM – 7 PM GMT</li>
-        </ul>
-      </div>
+      <div class="footer-brand"><div class="footer-logo">CelestiaAstrology</div><p>Ancient cosmic wisdom interpreted with care and precision to guide you through life's most meaningful decisions.</p><div class="footer-socials" style="margin-top:20px;"><div class="social-dot">𝕏</div><div class="social-dot">in</div><div class="social-dot">ig</div><div class="social-dot">▶</div></div></div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a data-page="home">Home</a></li><li><a data-page="about">About</a></li><li><a data-page="services">Services</a></li><li><a data-page="blog">Blog</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li>Birth Chart Analysis</li><li>Career Guidance</li><li>Marriage Compatibility</li><li>Relationship Consultation</li><li>Personal Guidance</li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li>hello@celestiaastrology.com</li><li>+44 20 7946 0831</li><li>London, United Kingdom</li><li>Mon–Sat: 9 AM – 7 PM GMT</li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 Celestia Astrology. All rights reserved.</p>
-      <p style="font-size:0.78rem;">Privacy Policy · Terms of Service</p>
-    </div>
+    <div class="footer-bottom"><p>© 2025 Celestia Astrology. All rights reserved.</p><p style="font-size:0.78rem;">Privacy Policy · Terms of Service</p></div>
   </footer>
+</div>
 
-</div><!-- /home -->
-
-<!-- ════════════════════════════════════════════
-     ABOUT PAGE
-════════════════════════════════════════════ -->
+<!-- ════════════════ ABOUT PAGE ════════════════ -->
 <div id="about" class="page">
-
   <div class="about-hero">
     <div class="section-label">Our Story</div>
     <h1>Bridging the Ancient<br>and the Personal</h1>
     <p>Celestia Astrology was founded on a single conviction: that the cosmos speaks, and every person deserves to hear what it says about them.</p>
   </div>
-
   <section class="section">
     <div class="container">
       <div class="about-profile reveal">
         <div class="profile-img-wrap">
           <div class="profile-img">🔭</div>
-          <div class="profile-badge">
-            <span>15+</span>
-            Years of Practice
-          </div>
+          <div class="profile-badge"><span>15+</span>Years of Practice</div>
         </div>
         <div class="about-text">
           <div class="section-label">Meet the Astrologer</div>
@@ -946,30 +733,14 @@
       </div>
     </div>
   </section>
-
-  <!-- MVV -->
   <section class="section" style="background: var(--navy-mid);">
     <div class="container">
-      <div class="reveal" style="text-align:center; margin-bottom:48px;">
-        <div class="section-label">What Drives Us</div>
-        <h2>Mission, Vision & Values</h2>
-      </div>
+      <div class="reveal" style="text-align:center; margin-bottom:48px;"><div class="section-label">What Drives Us</div><h2>Mission, Vision & Values</h2></div>
       <div class="mvv-grid">
-        <div class="mvv-card reveal">
-          <h3>Mission</h3>
-          <p>To make the wisdom of the cosmos accessible, compassionate, and genuinely useful — helping people move through life's pivotal moments with clarity, confidence, and courage.</p>
-        </div>
-        <div class="mvv-card reveal reveal-delay-1">
-          <h3>Vision</h3>
-          <p>A world where people understand the rhythms of their own lives deeply enough to make choices that are authentic, intentional, and aligned with their highest potential.</p>
-        </div>
-        <div class="mvv-card reveal reveal-delay-2">
-          <h3>Values</h3>
-          <p>Honesty above flattery. Depth over breadth. Compassion without sentimentality. We tell you what the stars genuinely indicate — not what you simply want to hear.</p>
-        </div>
+        <div class="mvv-card reveal"><h3>Mission</h3><p>To make the wisdom of the cosmos accessible, compassionate, and genuinely useful — helping people move through life's pivotal moments with clarity, confidence, and courage.</p></div>
+        <div class="mvv-card reveal reveal-delay-1"><h3>Vision</h3><p>A world where people understand the rhythms of their own lives deeply enough to make choices that are authentic, intentional, and aligned with their highest potential.</p></div>
+        <div class="mvv-card reveal reveal-delay-2"><h3>Values</h3><p>Honesty above flattery. Depth over breadth. Compassion without sentimentality. We tell you what the stars genuinely indicate — not what you simply want to hear.</p></div>
       </div>
-
-      <!-- Trust paragraph -->
       <div class="card reveal" style="margin-top: 40px; border-color: rgba(212,168,67,0.2); max-width: 820px; margin-left:auto; margin-right:auto; text-align:center; padding:40px;">
         <div style="font-size:2rem; margin-bottom:16px;">🌠</div>
         <h3 style="margin-bottom:14px;">Why Our Clients Trust Us</h3>
@@ -977,483 +748,271 @@
       </div>
     </div>
   </section>
-
   <footer>
     <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">CelestiaAstrology</div>
-        <p>Ancient cosmic wisdom interpreted with care and precision to guide you through life's most meaningful decisions.</p>
-        <div class="footer-socials" style="margin-top:20px;">
-          <div class="social-dot">𝕏</div>
-          <div class="social-dot">in</div>
-          <div class="social-dot">ig</div>
-          <div class="social-dot">▶</div>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <ul>
-          <li><a data-page="home">Home</a></li>
-          <li><a data-page="about">About</a></li>
-          <li><a data-page="services">Services</a></li>
-          <li><a data-page="blog">Blog</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li>Birth Chart Analysis</li>
-          <li>Career Guidance</li>
-          <li>Marriage Compatibility</li>
-          <li>Relationship Consultation</li>
-          <li>Personal Guidance</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li>hello@celestiaastrology.com</li>
-          <li>+44 20 7946 0831</li>
-          <li>London, United Kingdom</li>
-          <li>Mon–Sat: 9 AM – 7 PM GMT</li>
-        </ul>
-      </div>
+      <div class="footer-brand"><div class="footer-logo">CelestiaAstrology</div><p>Ancient cosmic wisdom interpreted with care and precision to guide you through life's most meaningful decisions.</p><div class="footer-socials" style="margin-top:20px;"><div class="social-dot">𝕏</div><div class="social-dot">in</div><div class="social-dot">ig</div><div class="social-dot">▶</div></div></div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a data-page="home">Home</a></li><li><a data-page="about">About</a></li><li><a data-page="services">Services</a></li><li><a data-page="blog">Blog</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li>Birth Chart Analysis</li><li>Career Guidance</li><li>Marriage Compatibility</li><li>Relationship Consultation</li><li>Personal Guidance</li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li>hello@celestiaastrology.com</li><li>+44 20 7946 0831</li><li>London, United Kingdom</li><li>Mon–Sat: 9 AM – 7 PM GMT</li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 Celestia Astrology. All rights reserved.</p>
-      <p style="font-size:0.78rem;">Privacy Policy · Terms of Service</p>
-    </div>
+    <div class="footer-bottom"><p>© 2025 Celestia Astrology. All rights reserved.</p><p style="font-size:0.78rem;">Privacy Policy · Terms of Service</p></div>
   </footer>
+</div>
 
-</div><!-- /about -->
-
-<!-- ════════════════════════════════════════════
-     SERVICES PAGE
-════════════════════════════════════════════ -->
+<!-- ════════════════ SERVICES PAGE ════════════════ -->
 <div id="services" class="page">
-
   <div class="services-hero">
     <div class="section-label">Astrological Services</div>
     <h1>Every Service, Personally Crafted</h1>
     <p>Choose the reading that speaks to where you are in life. Each session is a private, one-on-one dialogue between you, Ariana, and the cosmic map of your chart.</p>
   </div>
-
   <section class="section">
     <div class="container">
       <div class="section-label reveal">Core Readings</div>
       <h2 class="reveal" style="margin-bottom:40px;">Our Astrology Services</h2>
       <div class="services-grid">
-
-        <div class="card srv-card reveal">
-          <div class="srv-icon">🌟</div>
-          <div class="srv-tag">Foundation</div>
-          <h3>Birth Chart Analysis</h3>
-          <p style="font-size:0.88rem; margin-top:8px;">Your natal chart is the cosmic fingerprint of the moment you entered the world. This reading reveals your core personality, innate talents, emotional patterns, karmic themes, and life purpose. Delivered as a comprehensive one-hour consultation with a written summary.</p>
-        </div>
-
-        <div class="card srv-card reveal reveal-delay-1">
-          <div class="srv-icon">💼</div>
-          <div class="srv-tag">Career & Purpose</div>
-          <h3>Career & Vocational Guidance</h3>
-          <p style="font-size:0.88rem; margin-top:8px;">Examine the planetary signatures of your chart that reveal your natural professional strengths, the types of environments where you thrive, the timing of career peaks, and the fields most aligned with your authentic calling.</p>
-        </div>
-
-        <div class="card srv-card reveal reveal-delay-2">
-          <div class="srv-icon">💍</div>
-          <div class="srv-tag">Relationships</div>
-          <h3>Marriage Compatibility</h3>
-          <p style="font-size:0.88rem; margin-top:8px;">A synastry and composite chart reading for couples considering marriage or deepening their commitment. Explores emotional resonance, communication styles, karmic connections, and the long-term arc of the relationship.</p>
-        </div>
-
-        <div class="card srv-card reveal">
-          <div class="srv-icon">❤️</div>
-          <div class="srv-tag">Relationships</div>
-          <h3>Relationship Consultation</h3>
-          <p style="font-size:0.88rem; margin-top:8px;">For any significant relationship — romantic, familial, or professional. Understand why certain dynamics feel effortless or difficult, and how to navigate them with greater compassion and skill.</p>
-        </div>
-
-        <div class="card srv-card reveal reveal-delay-1">
-          <div class="srv-icon">🧭</div>
-          <div class="srv-tag">Life Path</div>
-          <h3>Personal Life Guidance</h3>
-          <p style="font-size:0.88rem; margin-top:8px;">For those at a crossroads — navigating a major life transition, spiritual question, or important decision. This open-topic reading uses your current planetary transits to illuminate what is happening and what is possible.</p>
-        </div>
-
-        <div class="card srv-card reveal reveal-delay-2">
-          <div class="srv-icon">📅</div>
-          <div class="srv-tag">Planning</div>
-          <h3>Annual Forecast Reading</h3>
-          <p style="font-size:0.88rem; margin-top:8px;">A solar return and transit-based overview of your year ahead. Identify your peak periods for love, career, health, and creativity — and understand which seasons call for patience rather than action.</p>
-        </div>
-
-        <div class="card srv-card reveal">
-          <div class="srv-icon">🔮</div>
-          <div class="srv-tag">Deep Dive</div>
-          <h3>Karmic & Past Life Astrology</h3>
-          <p style="font-size:0.88rem; margin-top:8px;">Explore the Nodes of the Moon, Saturn's lessons, and the karmic indicators in your chart that speak to the soul-level journey you are on and the patterns you are here to evolve beyond.</p>
-        </div>
-
-        <div class="card srv-card reveal reveal-delay-1">
-          <div class="srv-icon">👶</div>
-          <div class="srv-tag">Family</div>
-          <h3>Child Astrology Reading</h3>
-          <p style="font-size:0.88rem; margin-top:8px;">Understand your child's unique nature, learning style, emotional needs, and innate gifts through their birth chart — a gift that helps parents nurture who their child truly is rather than who they expect them to be.</p>
-        </div>
-
-        <div class="card srv-card reveal reveal-delay-2">
-          <div class="srv-icon">🏢</div>
-          <div class="srv-tag">Business</div>
-          <h3>Business Astrology</h3>
-          <p style="font-size:0.88rem; margin-top:8px;">An electional astrology and entrepreneur chart reading to identify your most auspicious timing for launches, partnerships, relocations, and major business decisions.</p>
-        </div>
-
+        <div class="card srv-card reveal"><div class="srv-icon">🌟</div><div class="srv-tag">Foundation</div><h3>Birth Chart Analysis</h3><p style="font-size:0.88rem; margin-top:8px;">Your natal chart is the cosmic fingerprint of the moment you entered the world. This reading reveals your core personality, innate talents, emotional patterns, karmic themes, and life purpose. Delivered as a comprehensive one-hour consultation with a written summary.</p><br><button class="btn btn-gold" style="font-size:0.82rem; padding:10px 22px;" onclick="openBookingModal('Birth Chart Analysis')">Book Now</button></div>
+        <div class="card srv-card reveal reveal-delay-1"><div class="srv-icon">💼</div><div class="srv-tag">Career & Purpose</div><h3>Career & Vocational Guidance</h3><p style="font-size:0.88rem; margin-top:8px;">Examine the planetary signatures of your chart that reveal your natural professional strengths, the types of environments where you thrive, the timing of career peaks, and the fields most aligned with your authentic calling.</p><br><button class="btn btn-gold" style="font-size:0.82rem; padding:10px 22px;" onclick="openBookingModal('Career & Vocational Guidance')">Book Now</button></div>
+        <div class="card srv-card reveal reveal-delay-2"><div class="srv-icon">💍</div><div class="srv-tag">Relationships</div><h3>Marriage Compatibility</h3><p style="font-size:0.88rem; margin-top:8px;">A synastry and composite chart reading for couples considering marriage or deepening their commitment. Explores emotional resonance, communication styles, karmic connections, and the long-term arc of the relationship.</p><br><button class="btn btn-gold" style="font-size:0.82rem; padding:10px 22px;" onclick="openBookingModal('Marriage Compatibility')">Book Now</button></div>
+        <div class="card srv-card reveal"><div class="srv-icon">❤️</div><div class="srv-tag">Relationships</div><h3>Relationship Consultation</h3><p style="font-size:0.88rem; margin-top:8px;">For any significant relationship — romantic, familial, or professional. Understand why certain dynamics feel effortless or difficult, and how to navigate them with greater compassion and skill.</p><br><button class="btn btn-gold" style="font-size:0.82rem; padding:10px 22px;" onclick="openBookingModal('Relationship Consultation')">Book Now</button></div>
+        <div class="card srv-card reveal reveal-delay-1"><div class="srv-icon">🧭</div><div class="srv-tag">Life Path</div><h3>Personal Life Guidance</h3><p style="font-size:0.88rem; margin-top:8px;">For those at a crossroads — navigating a major life transition, spiritual question, or important decision. This open-topic reading uses your current planetary transits to illuminate what is happening and what is possible.</p><br><button class="btn btn-gold" style="font-size:0.82rem; padding:10px 22px;" onclick="openBookingModal('Personal Life Guidance')">Book Now</button></div>
+        <div class="card srv-card reveal reveal-delay-2"><div class="srv-icon">📅</div><div class="srv-tag">Planning</div><h3>Annual Forecast Reading</h3><p style="font-size:0.88rem; margin-top:8px;">A solar return and transit-based overview of your year ahead. Identify your peak periods for love, career, health, and creativity — and understand which seasons call for patience rather than action.</p><br><button class="btn btn-gold" style="font-size:0.82rem; padding:10px 22px;" onclick="openBookingModal('Annual Forecast Reading')">Book Now</button></div>
+        <div class="card srv-card reveal"><div class="srv-icon">🔮</div><div class="srv-tag">Deep Dive</div><h3>Karmic & Past Life Astrology</h3><p style="font-size:0.88rem; margin-top:8px;">Explore the Nodes of the Moon, Saturn's lessons, and the karmic indicators in your chart that speak to the soul-level journey you are on and the patterns you are here to evolve beyond.</p><br><button class="btn btn-gold" style="font-size:0.82rem; padding:10px 22px;" onclick="openBookingModal('Karmic & Past Life Astrology')">Book Now</button></div>
+        <div class="card srv-card reveal reveal-delay-1"><div class="srv-icon">👶</div><div class="srv-tag">Family</div><h3>Child Astrology Reading</h3><p style="font-size:0.88rem; margin-top:8px;">Understand your child's unique nature, learning style, emotional needs, and innate gifts through their birth chart — a gift that helps parents nurture who their child truly is rather than who they expect them to be.</p><br><button class="btn btn-gold" style="font-size:0.82rem; padding:10px 22px;" onclick="openBookingModal('Child Astrology Reading')">Book Now</button></div>
+        <div class="card srv-card reveal reveal-delay-2"><div class="srv-icon">🏢</div><div class="srv-tag">Business</div><h3>Business Astrology</h3><p style="font-size:0.88rem; margin-top:8px;">An electional astrology and entrepreneur chart reading to identify your most auspicious timing for launches, partnerships, relocations, and major business decisions.</p><br><button class="btn btn-gold" style="font-size:0.82rem; padding:10px 22px;" onclick="openBookingModal('Business Astrology')">Book Now</button></div>
       </div>
     </div>
   </section>
-
-  <!-- Process -->
   <section class="section" style="background: var(--navy-mid);">
     <div class="container">
-      <div class="reveal" style="text-align:center; margin-bottom:48px;">
-        <div class="section-label">How It Works</div>
-        <h2>Simple, Thoughtful, Personal</h2>
-      </div>
+      <div class="reveal" style="text-align:center; margin-bottom:48px;"><div class="section-label">How It Works</div><h2>Simple, Thoughtful, Personal</h2></div>
       <div class="process-steps">
-        <div class="step reveal">
-          <div class="step-num">1</div>
-          <h3>Choose Your Reading</h3>
-          <p style="font-size:0.85rem;">Select the service that best matches your current life question or area of focus.</p>
-        </div>
-        <div class="step reveal reveal-delay-1">
-          <div class="step-num">2</div>
-          <h3>Share Your Details</h3>
-          <p style="font-size:0.85rem;">Provide your birth date, time, and location. Accuracy ensures the most precise reading.</p>
-        </div>
-        <div class="step reveal reveal-delay-2">
-          <div class="step-num">3</div>
-          <h3>Book Your Session</h3>
-          <p style="font-size:0.85rem;">Choose a time from Ariana's availability and confirm your private consultation.</p>
-        </div>
-        <div class="step reveal reveal-delay-3">
-          <div class="step-num">4</div>
-          <h3>Receive Your Reading</h3>
-          <p style="font-size:0.85rem;">Join via video or phone. Receive your session recording and written summary within 48 hours.</p>
-        </div>
+        <div class="step reveal"><div class="step-num">1</div><h3>Choose Your Reading</h3><p style="font-size:0.85rem;">Select the service that best matches your current life question or area of focus.</p></div>
+        <div class="step reveal reveal-delay-1"><div class="step-num">2</div><h3>Share Your Details</h3><p style="font-size:0.85rem;">Provide your birth date, time, and location. Accuracy ensures the most precise reading.</p></div>
+        <div class="step reveal reveal-delay-2"><div class="step-num">3</div><h3>Book Your Session</h3><p style="font-size:0.85rem;">Choose a time from Ariana's availability and confirm your private consultation.</p></div>
+        <div class="step reveal reveal-delay-3"><div class="step-num">4</div><h3>Receive Your Reading</h3><p style="font-size:0.85rem;">Join via video or phone. Receive your session recording and written summary within 48 hours.</p></div>
       </div>
     </div>
   </section>
-
-  <!-- Pricing -->
   <section class="section">
     <div class="container">
-      <div class="reveal" style="text-align:center; margin-bottom:48px;">
-        <div class="section-label">Investment</div>
-        <h2>Transparent Pricing</h2>
-        <p style="max-width:500px; margin: 12px auto 0;">All sessions are conducted personally by Ariana Celestine. No templates, no outsourcing.</p>
-      </div>
+      <div class="reveal" style="text-align:center; margin-bottom:48px;"><div class="section-label">Investment</div><h2>Transparent Pricing</h2><p style="max-width:500px; margin: 12px auto 0;">All sessions are conducted personally by Ariana Celestine. No templates, no outsourcing.</p></div>
       <div class="price-grid">
-        <div class="price-card reveal">
-          <div class="price-plan">Starter</div>
-          <h3>Natal Essence</h3>
-          <div class="price-amount">$120<sub>/session</sub></div>
-          <ul class="price-features">
-            <li>45-minute consultation</li>
-            <li>Birth chart overview</li>
-            <li>3 core life themes</li>
-            <li>Session recording</li>
-          </ul>
-          <a class="btn btn-outline" style="width:100%; text-align:center;">Book Now</a>
-        </div>
-        <div class="price-card featured reveal reveal-delay-1">
-          <div class="price-plan">Most Popular</div>
-          <h3>Deep Dive</h3>
-          <div class="price-amount">$220<sub>/session</sub></div>
-          <ul class="price-features">
-            <li>90-minute consultation</li>
-            <li>Full natal chart analysis</li>
-            <li>Current transits & timing</li>
-            <li>Written summary report</li>
-            <li>Session recording</li>
-            <li>One follow-up question (email)</li>
-          </ul>
-          <a class="btn btn-gold" style="width:100%; text-align:center;">Book Now</a>
-        </div>
-        <div class="price-card reveal reveal-delay-2">
-          <div class="price-plan">Comprehensive</div>
-          <h3>Full Cosmic Portrait</h3>
-          <div class="price-amount">$380<sub>/session</sub></div>
-          <ul class="price-features">
-            <li>2-hour deep consultation</li>
-            <li>Natal + Transits + Solar Return</li>
-            <li>Career & relationship themes</li>
-            <li>12-month roadmap</li>
-            <li>Detailed written report</li>
-            <li>Two follow-up email replies</li>
-          </ul>
-          <a class="btn btn-outline" style="width:100%; text-align:center;">Book Now</a>
-        </div>
+        <div class="price-card reveal"><div class="price-plan">Starter</div><h3>Natal Essence</h3><div class="price-amount">$120<sub>/session</sub></div><ul class="price-features"><li>45-minute consultation</li><li>Birth chart overview</li><li>3 core life themes</li><li>Session recording</li></ul><button class="btn btn-outline" style="width:100%; text-align:center;" onclick="openBookingModal('Birth Chart Analysis')">Book Now</button></div>
+        <div class="price-card featured reveal reveal-delay-1"><div class="price-plan">Most Popular</div><h3>Deep Dive</h3><div class="price-amount">$220<sub>/session</sub></div><ul class="price-features"><li>90-minute consultation</li><li>Full natal chart analysis</li><li>Current transits & timing</li><li>Written summary report</li><li>Session recording</li><li>One follow-up question (email)</li></ul><button class="btn btn-gold" style="width:100%; text-align:center;" onclick="openBookingModal('Birth Chart Analysis')">Book Now</button></div>
+        <div class="price-card reveal reveal-delay-2"><div class="price-plan">Comprehensive</div><h3>Full Cosmic Portrait</h3><div class="price-amount">$380<sub>/session</sub></div><ul class="price-features"><li>2-hour deep consultation</li><li>Natal + Transits + Solar Return</li><li>Career & relationship themes</li><li>12-month roadmap</li><li>Detailed written report</li><li>Two follow-up email replies</li></ul><button class="btn btn-outline" style="width:100%; text-align:center;" onclick="openBookingModal('Birth Chart Analysis')">Book Now</button></div>
       </div>
     </div>
   </section>
-
   <footer>
     <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">CelestiaAstrology</div>
-        <p>Ancient cosmic wisdom interpreted with care and precision to guide you through life's most meaningful decisions.</p>
-        <div class="footer-socials" style="margin-top:20px;">
-          <div class="social-dot">𝕏</div>
-          <div class="social-dot">in</div>
-          <div class="social-dot">ig</div>
-          <div class="social-dot">▶</div>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <ul>
-          <li><a data-page="home">Home</a></li>
-          <li><a data-page="about">About</a></li>
-          <li><a data-page="services">Services</a></li>
-          <li><a data-page="blog">Blog</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li>Birth Chart Analysis</li>
-          <li>Career Guidance</li>
-          <li>Marriage Compatibility</li>
-          <li>Relationship Consultation</li>
-          <li>Personal Guidance</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li>hello@celestiaastrology.com</li>
-          <li>+44 20 7946 0831</li>
-          <li>London, United Kingdom</li>
-          <li>Mon–Sat: 9 AM – 7 PM GMT</li>
-        </ul>
-      </div>
+      <div class="footer-brand"><div class="footer-logo">CelestiaAstrology</div><p>Ancient cosmic wisdom interpreted with care and precision.</p><div class="footer-socials" style="margin-top:20px;"><div class="social-dot">𝕏</div><div class="social-dot">in</div><div class="social-dot">ig</div><div class="social-dot">▶</div></div></div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a data-page="home">Home</a></li><li><a data-page="about">About</a></li><li><a data-page="services">Services</a></li><li><a data-page="blog">Blog</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li>Birth Chart Analysis</li><li>Career Guidance</li><li>Marriage Compatibility</li><li>Relationship Consultation</li><li>Personal Guidance</li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li>hello@celestiaastrology.com</li><li>+44 20 7946 0831</li><li>London, United Kingdom</li><li>Mon–Sat: 9 AM – 7 PM GMT</li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 Celestia Astrology. All rights reserved.</p>
-      <p style="font-size:0.78rem;">Privacy Policy · Terms of Service</p>
-    </div>
+    <div class="footer-bottom"><p>© 2025 Celestia Astrology. All rights reserved.</p><p style="font-size:0.78rem;">Privacy Policy · Terms of Service</p></div>
   </footer>
+</div>
 
-</div><!-- /services -->
-
-<!-- ════════════════════════════════════════════
-     BLOG PAGE
-════════════════════════════════════════════ -->
+<!-- ════════════════ BLOG PAGE ════════════════ -->
 <div id="blog" class="page">
-
-  <div class="blog-hero">
-    <div class="section-label">Cosmic Insights</div>
-    <h1>The Celestia Journal</h1>
-    <p>Thoughtful essays on astrology, self-understanding, and navigating life's seasons through the lens of the cosmos.</p>
-  </div>
-
+  <div class="blog-hero"><div class="section-label">Cosmic Insights</div><h1>The Celestia Journal</h1><p>Thoughtful essays on astrology, self-understanding, and navigating life's seasons through the lens of the cosmos.</p></div>
   <section class="section">
     <div class="container">
-
-      <!-- Featured post -->
       <div class="blog-card reveal" style="display:grid; grid-template-columns:1fr 1fr; margin-bottom:40px; overflow:hidden; border-radius:var(--radius);">
         <div class="blog-thumb" style="background: linear-gradient(135deg, #1a0e30, #0d1535); aspect-ratio:unset; min-height:280px; font-size:5rem;">🌌</div>
         <div class="blog-body" style="padding:36px; display:flex; flex-direction:column; justify-content:center;">
           <div class="blog-cat">Featured · Birth Chart</div>
           <h2 style="font-size:1.5rem; margin-bottom:12px;">Understanding Your Birth Chart: A Beginner's Complete Guide</h2>
           <p style="font-size:0.9rem; margin-bottom:24px;">Your birth chart is one of the most intimate maps ever drawn — a snapshot of the sky at the exact moment of your arrival. This guide walks you through each element: planets, houses, signs, and aspects, demystifying the language of astrology without losing its poetry.</p>
-          <div class="blog-meta">
-            <div class="blog-date">14 November 2025</div>
-            <div class="blog-readmore">Read Full Article →</div>
-          </div>
+          <div class="blog-meta"><div class="blog-date">14 November 2025</div><div class="blog-readmore">Read Full Article →</div></div>
         </div>
       </div>
-
-      <!-- Blog Grid -->
       <div class="blog-grid">
-
-        <div class="blog-card reveal">
-          <div class="blog-thumb" style="background: linear-gradient(135deg, #0f1a35, #1a2050);">💫</div>
-          <div class="blog-body">
-            <div class="blog-cat">Career & Planets</div>
-            <h3>How Planets Influence Career: Saturn, Jupiter & the Midheaven Explained</h3>
-            <p>Saturn disciplines, Jupiter expands, and your Midheaven reveals the arena you are built to excel in. Discover how these three cosmic forces shape your professional destiny.</p>
-            <div class="blog-meta">
-              <div class="blog-date">28 October 2025</div>
-              <div class="blog-readmore">Read More →</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="blog-card reveal reveal-delay-1">
-          <div class="blog-thumb" style="background: linear-gradient(135deg, #1f0a30, #0d1520);">♡</div>
-          <div class="blog-body">
-            <div class="blog-cat">Relationships</div>
-            <h3>Astrology and Relationships: What Your Venus Sign Says About Love</h3>
-            <p>Venus in your chart reveals how you love, what you find beautiful, and what you need to feel truly valued in a partnership. A deep and surprisingly accurate guide.</p>
-            <div class="blog-meta">
-              <div class="blog-date">5 October 2025</div>
-              <div class="blog-readmore">Read More →</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="blog-card reveal reveal-delay-2">
-          <div class="blog-thumb" style="background: linear-gradient(135deg, #0a1a20, #151535);">♊</div>
-          <div class="blog-body">
-            <div class="blog-cat">Compatibility</div>
-            <h3>Zodiac Compatibility Guide: Beyond Sun Signs to Soul-Level Connection</h3>
-            <p>Sun sign compatibility is just the surface. The real magic lies in Moon signs, Venus placements, and the Nodal axis. Here is how to read a relationship chart properly.</p>
-            <div class="blog-meta">
-              <div class="blog-date">17 September 2025</div>
-              <div class="blog-readmore">Read More →</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="blog-card reveal">
-          <div class="blog-thumb" style="background: linear-gradient(135deg, #1a1005, #0d1530);">🪐</div>
-          <div class="blog-body">
-            <div class="blog-cat">Transits</div>
-            <h3>Saturn Return: Why Your Late Twenties Feel So Intense</h3>
-            <p>Occurring around ages 27–30, the Saturn Return is astrology's most powerful rite of passage. Learn what it asks of you and how to navigate it with wisdom rather than fear.</p>
-            <div class="blog-meta">
-              <div class="blog-date">3 September 2025</div>
-              <div class="blog-readmore">Read More →</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="blog-card reveal reveal-delay-1">
-          <div class="blog-thumb" style="background: linear-gradient(135deg, #0a1520, #201030);">🌕</div>
-          <div class="blog-body">
-            <div class="blog-cat">Lunar Cycles</div>
-            <h3>Working With the Moon: New Moon Intentions & Full Moon Releases</h3>
-            <p>The Moon moves through the entire zodiac every 28 days. Here is how to align your goals, rest, and energy with its eight phases for a more rhythmic, effortless life.</p>
-            <div class="blog-meta">
-              <div class="blog-date">20 August 2025</div>
-              <div class="blog-readmore">Read More →</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="blog-card reveal reveal-delay-2">
-          <div class="blog-thumb" style="background: linear-gradient(135deg, #150a20, #0d1835);">☿</div>
-          <div class="blog-body">
-            <div class="blog-cat">Planets</div>
-            <h3>Mercury Retrograde: The Truth Behind the Chaos (And What to Actually Do)</h3>
-            <p>Mercury retrograde is blamed for everything from broken phones to failed relationships. Here is a grounded, practical guide to what it actually affects — and what it does not.</p>
-            <div class="blog-meta">
-              <div class="blog-date">8 August 2025</div>
-              <div class="blog-readmore">Read More →</div>
-            </div>
-          </div>
-        </div>
-
+        <div class="blog-card reveal"><div class="blog-thumb" style="background: linear-gradient(135deg, #0f1a35, #1a2050);">💫</div><div class="blog-body"><div class="blog-cat">Career & Planets</div><h3>How Planets Influence Career: Saturn, Jupiter & the Midheaven Explained</h3><p>Saturn disciplines, Jupiter expands, and your Midheaven reveals the arena you are built to excel in.</p><div class="blog-meta"><div class="blog-date">28 October 2025</div><div class="blog-readmore">Read More →</div></div></div></div>
+        <div class="blog-card reveal reveal-delay-1"><div class="blog-thumb" style="background: linear-gradient(135deg, #1f0a30, #0d1520);">♡</div><div class="blog-body"><div class="blog-cat">Relationships</div><h3>Astrology and Relationships: What Your Venus Sign Says About Love</h3><p>Venus in your chart reveals how you love, what you find beautiful, and what you need to feel truly valued in a partnership.</p><div class="blog-meta"><div class="blog-date">5 October 2025</div><div class="blog-readmore">Read More →</div></div></div></div>
+        <div class="blog-card reveal reveal-delay-2"><div class="blog-thumb" style="background: linear-gradient(135deg, #0a1a20, #151535);">♊</div><div class="blog-body"><div class="blog-cat">Compatibility</div><h3>Zodiac Compatibility Guide: Beyond Sun Signs to Soul-Level Connection</h3><p>Sun sign compatibility is just the surface. The real magic lies in Moon signs, Venus placements, and the Nodal axis.</p><div class="blog-meta"><div class="blog-date">17 September 2025</div><div class="blog-readmore">Read More →</div></div></div></div>
+        <div class="blog-card reveal"><div class="blog-thumb" style="background: linear-gradient(135deg, #1a1005, #0d1530);">🪐</div><div class="blog-body"><div class="blog-cat">Transits</div><h3>Saturn Return: Why Your Late Twenties Feel So Intense</h3><p>Occurring around ages 27–30, the Saturn Return is astrology's most powerful rite of passage.</p><div class="blog-meta"><div class="blog-date">3 September 2025</div><div class="blog-readmore">Read More →</div></div></div></div>
+        <div class="blog-card reveal reveal-delay-1"><div class="blog-thumb" style="background: linear-gradient(135deg, #0a1520, #201030);">🌕</div><div class="blog-body"><div class="blog-cat">Lunar Cycles</div><h3>Working With the Moon: New Moon Intentions & Full Moon Releases</h3><p>The Moon moves through the entire zodiac every 28 days. Here is how to align your goals with its eight phases.</p><div class="blog-meta"><div class="blog-date">20 August 2025</div><div class="blog-readmore">Read More →</div></div></div></div>
+        <div class="blog-card reveal reveal-delay-2"><div class="blog-thumb" style="background: linear-gradient(135deg, #150a20, #0d1835);">☿</div><div class="blog-body"><div class="blog-cat">Planets</div><h3>Mercury Retrograde: The Truth Behind the Chaos (And What to Actually Do)</h3><p>Mercury retrograde is blamed for everything from broken phones to failed relationships. Here is a grounded, practical guide.</p><div class="blog-meta"><div class="blog-date">8 August 2025</div><div class="blog-readmore">Read More →</div></div></div></div>
       </div>
     </div>
   </section>
-
-  <!-- Newsletter -->
   <section class="section" style="background: var(--navy-mid);">
     <div class="container">
       <div class="newsletter-wrap reveal">
         <div class="section-label">Stay Connected</div>
         <h2>Receive the Monthly Cosmic Brief</h2>
         <p>Every month, Ariana shares a personal lunar forecast, planetary highlights, and practical guidance — delivered directly to your inbox.</p>
-        <form class="newsletter-form" onsubmit="return false;">
-          <input type="email" placeholder="Your email address" />
-          <button class="btn btn-gold" type="submit">Subscribe</button>
-        </form>
+        <form class="newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" /><button class="btn btn-gold" type="submit">Subscribe</button></form>
       </div>
     </div>
   </section>
-
   <footer>
     <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">CelestiaAstrology</div>
-        <p>Ancient cosmic wisdom interpreted with care and precision to guide you through life's most meaningful decisions.</p>
-        <div class="footer-socials" style="margin-top:20px;">
-          <div class="social-dot">𝕏</div>
-          <div class="social-dot">in</div>
-          <div class="social-dot">ig</div>
-          <div class="social-dot">▶</div>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <ul>
-          <li><a data-page="home">Home</a></li>
-          <li><a data-page="about">About</a></li>
-          <li><a data-page="services">Services</a></li>
-          <li><a data-page="blog">Blog</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li>Birth Chart Analysis</li>
-          <li>Career Guidance</li>
-          <li>Marriage Compatibility</li>
-          <li>Relationship Consultation</li>
-          <li>Personal Guidance</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li>hello@celestiaastrology.com</li>
-          <li>+44 20 7946 0831</li>
-          <li>London, United Kingdom</li>
-          <li>Mon–Sat: 9 AM – 7 PM GMT</li>
-        </ul>
-      </div>
+      <div class="footer-brand"><div class="footer-logo">CelestiaAstrology</div><p>Ancient cosmic wisdom interpreted with care and precision.</p><div class="footer-socials" style="margin-top:20px;"><div class="social-dot">𝕏</div><div class="social-dot">in</div><div class="social-dot">ig</div><div class="social-dot">▶</div></div></div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a data-page="home">Home</a></li><li><a data-page="about">About</a></li><li><a data-page="services">Services</a></li><li><a data-page="blog">Blog</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li>Birth Chart Analysis</li><li>Career Guidance</li><li>Marriage Compatibility</li><li>Relationship Consultation</li><li>Personal Guidance</li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li>hello@celestiaastrology.com</li><li>+44 20 7946 0831</li><li>London, United Kingdom</li><li>Mon–Sat: 9 AM – 7 PM GMT</li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 Celestia Astrology. All rights reserved.</p>
-      <p style="font-size:0.78rem;">Privacy Policy · Terms of Service</p>
-    </div>
+    <div class="footer-bottom"><p>© 2025 Celestia Astrology. All rights reserved.</p><p style="font-size:0.78rem;">Privacy Policy · Terms of Service</p></div>
   </footer>
-
-</div><!-- /blog -->
+</div>
 
 <!-- ════════ JAVASCRIPT ════════ -->
 <script>
+  // ══════════════════════════════════════════════
+  // ⚠️  REPLACE THIS WITH YOUR WHATSAPP NUMBER
+  //     Format: country code + number, no + or spaces
+  //     Example: India +91 98765 43210 → "919876543210"
+  // ══════════════════════════════════════════════
+  const WHATSAPP_NUMBER = "918922911893";
+
   // ── PAGE NAVIGATION ──
   function navigate(target) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     const page = document.getElementById(target);
-    if (page) {
-      page.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    // Update nav active states
+    if (page) { page.classList.add('active'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
     document.querySelectorAll('[data-page]').forEach(a => {
       a.classList.toggle('active', a.dataset.page === target);
     });
-    // Close mobile nav
     document.getElementById('mobileNav').classList.remove('open');
-    // Re-trigger reveal animations
     setTimeout(initReveal, 100);
   }
 
   document.addEventListener('click', e => {
     const el = e.target.closest('[data-page]');
-    if (el) {
-      e.preventDefault();
-      navigate(el.dataset.page);
-    }
+    if (el) { e.preventDefault(); navigate(el.dataset.page); }
   });
 
-  // ── HAMBURGER ──
   document.getElementById('hamburger').addEventListener('click', () => {
     document.getElementById('mobileNav').classList.toggle('open');
   });
+
+  // ── BOOKING MODAL ──
+  const modal = document.getElementById('bookingModal');
+  const modalClose = document.getElementById('modalClose');
+  const successClose = document.getElementById('successClose');
+  const whatsappBtn = document.getElementById('whatsappSubmitBtn');
+  const serviceSelect = document.getElementById('f-service');
+
+  function openBookingModal(serviceName) {
+    // Reset form
+    document.getElementById('modalFormContent').style.display = 'block';
+    document.getElementById('modalSuccess').classList.remove('show');
+
+    // Pre-select service if passed
+    if (serviceName && serviceName !== 'Consultation') {
+      const opt = Array.from(serviceSelect.options).find(o => o.value === serviceName);
+      if (opt) serviceSelect.value = serviceName;
+    }
+
+    // Update badge
+    document.getElementById('selectedServiceName').textContent = serviceName || 'Consultation';
+
+    // Clear errors
+    document.querySelectorAll('.field-error').forEach(e => e.style.display = 'none');
+    document.querySelectorAll('.form-control').forEach(f => f.classList.remove('error'));
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  modalClose.addEventListener('click', closeModal);
+  successClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+  // Update badge when service dropdown changes
+  serviceSelect.addEventListener('change', () => {
+    const val = serviceSelect.value || 'Consultation';
+    document.getElementById('selectedServiceName').textContent = val;
+  });
+
+  // ── FORM VALIDATION & WHATSAPP SEND ──
+  whatsappBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    if (!validateForm()) return;
+    sendToWhatsApp();
+  });
+
+  function validateForm() {
+    let valid = true;
+    const checks = [
+      { id: 'f-name',       errId: 'err-name',       check: v => v.trim().length >= 2 },
+      { id: 'f-email',      errId: 'err-email',      check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+      { id: 'f-phone',      errId: 'err-phone',      check: v => v.trim().length >= 7 },
+      { id: 'f-dob',        errId: 'err-dob',        check: v => v !== '' },
+      { id: 'f-birthplace', errId: 'err-birthplace', check: v => v.trim().length >= 2 },
+      { id: 'f-service',    errId: 'err-service',    check: v => v !== '' },
+    ];
+    checks.forEach(({ id, errId, check }) => {
+      const el = document.getElementById(id);
+      const err = document.getElementById(errId);
+      if (!check(el.value)) {
+        el.classList.add('error');
+        err.style.display = 'block';
+        valid = false;
+      } else {
+        el.classList.remove('error');
+        err.style.display = 'none';
+      }
+    });
+    return valid;
+  }
+
+  function sendToWhatsApp() {
+    const get = id => document.getElementById(id).value.trim();
+
+    const name       = get('f-name');
+    const email      = get('f-email');
+    const phone      = get('f-phone');
+    const dob        = get('f-dob');
+    const tob        = get('f-tob') || 'Not provided';
+    const gender     = get('f-gender') || 'Not specified';
+    const birthplace = get('f-birthplace');
+    const address    = get('f-address') || 'Not provided';
+    const service    = get('f-service');
+    const pkg        = get('f-package') || 'Not selected';
+    const message    = get('f-message') || 'No additional message.';
+
+    const text =
+`✨ *New Consultation Booking — Celestia Astrology* ✨
+
+👤 *Personal Details*
+• Name: ${name}
+• Email: ${email}
+• Phone/WhatsApp: ${phone}
+• Gender: ${gender}
+
+🪐 *Birth Information*
+• Date of Birth: ${dob}
+• Time of Birth: ${tob}
+• Place of Birth: ${birthplace}
+• Current Address: ${address}
+
+📋 *Session Details*
+• Service: ${service}
+• Package: ${pkg}
+
+💬 *Message / Focus for Session*
+${message}
+
+━━━━━━━━━━━━━━━━━━━━
+Sent via CelestiaAstrology.com`;
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+
+    // Show success screen
+    document.getElementById('modalFormContent').style.display = 'none';
+    document.getElementById('modalSuccess').classList.add('show');
+  }
 
   // ── STAR CANVAS ──
   function initStars() {
@@ -1461,26 +1020,12 @@
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let W, H, stars = [];
-
-    function resize() {
-      W = canvas.width = canvas.offsetWidth;
-      H = canvas.height = canvas.offsetHeight;
-    }
+    function resize() { W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; }
     resize();
     window.addEventListener('resize', resize);
-
     for (let i = 0; i < 180; i++) {
-      stars.push({
-        x: Math.random(),
-        y: Math.random(),
-        r: Math.random() * 1.6 + 0.2,
-        alpha: Math.random() * 0.7 + 0.2,
-        speed: Math.random() * 0.004 + 0.001,
-        dir: Math.random() > 0.5 ? 1 : -1,
-        phase: Math.random() * Math.PI * 2
-      });
+      stars.push({ x: Math.random(), y: Math.random(), r: Math.random() * 1.6 + 0.2, alpha: Math.random() * 0.7 + 0.2, speed: Math.random() * 0.004 + 0.001, phase: Math.random() * Math.PI * 2 });
     }
-
     function draw() {
       ctx.clearRect(0, 0, W, H);
       const now = Date.now() / 1000;
@@ -1501,12 +1046,7 @@
   function initReveal() {
     const els = document.querySelectorAll('.page.active .reveal');
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
     }, { threshold: 0.12 });
     els.forEach(el => observer.observe(el));
   }
