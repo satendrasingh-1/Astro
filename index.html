@@ -167,9 +167,9 @@
     .profile-img-wrap { position: sticky; top: 120px; padding: 25px; }
     .profile-img-wrap::before { content: ""; position: absolute; width: 450px; height: 450px; top: 0; left: 0; border-radius: 50%; border: 1px solid rgba(212,168,67,.13); box-shadow: 0 0 0 25px rgba(212,168,67,.015), 0 0 0 50px rgba(212,168,67,.01); pointer-events: none; z-index: 0; }
     .profile-img-wrap::after { content: "✦     ✧     ✦     ✧     ✦"; position: absolute; width: 430px; height: 430px; top: 10px; left: 10px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(212,168,67,.18); font-size: 14px; letter-spacing: 15px; pointer-events: none; z-index: 0; }
-    .profile-img { width: 100%; height: 500px; object-fit: cover; border-radius: 24px; background: linear-gradient(160deg,#1e1040,#0d1535); border: 1px solid rgba(212,168,67,.3); display: block; overflow: hidden; position: relative; z-index: 2; box-shadow: 0 25px 70px rgba(0,0,0,.45), 0 0 50px rgba(107,63,160,.13); }
-    .profile-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-    .profile-badge { position: absolute; top: 430px; bottom: auto; right: 0; z-index: 5; background: linear-gradient(135deg,var(--gold),var(--gold-lt)); color: #1a1000; border-radius: 15px; padding: 13px 18px; font-weight: 700; font-size: .75rem; text-align: center; box-shadow: 0 10px 30px rgba(212,168,67,.35); }
+    .profile-img { width: 100%; height: 500px; border-radius: 24px; background: linear-gradient(160deg,#1e1040,#0d1535); border: 1px solid rgba(212,168,67,.3); display: block; overflow: hidden; position: relative; z-index: 2; box-shadow: 0 25px 70px rgba(0,0,0,.45), 0 0 50px rgba(107,63,160,.13); }
+    .profile-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; border-radius: inherit; }
+    .profile-badge { position: absolute; top: 400px; bottom: auto; right: -2px; z-index: 6; background: linear-gradient(135deg,var(--gold),var(--gold-lt)); color: #1a1000; border-radius: 15px; padding: 13px 18px; font-weight: 700; font-size: .75rem; text-align: center; box-shadow: 0 10px 30px rgba(212,168,67,.35); }
     .profile-badge span { display: block; font-size: 1.55rem; font-family: 'Playfair Display',serif; line-height: 1.1; }
     .profile-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 25px; position: relative; z-index: 4; }
     .profile-stat { text-align: center; padding: 17px 8px; background: rgba(255,255,255,.025); border: 1px solid rgba(212,168,67,.15); border-radius: 13px; backdrop-filter: blur(10px); }
@@ -308,6 +308,15 @@
     .blog-date { font-size: 0.78rem; color: var(--muted); }
     .blog-readmore { font-size: 0.82rem; font-weight: 600; color: var(--gold); cursor: pointer; display: flex; align-items: center; gap: 4px; transition: gap var(--transition); }
     .blog-readmore:hover { gap: 8px; }
+
+    .blog-readmore {
+      border: 0;
+      background: transparent;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.4;
+    }
+
     .newsletter-wrap { background: linear-gradient(135deg, #1a0e30, #0f1635); border: 1px solid rgba(212,168,67,0.18); border-radius: 20px; padding: 56px 40px; text-align: center; }
     .newsletter-wrap h2 { margin-bottom: 12px; }
     .newsletter-wrap p { margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
@@ -514,6 +523,176 @@
     .modal-success h3 { font-size: 1.6rem; margin-bottom: 12px; }
     .modal-success p { max-width: 380px; margin: 0 auto; }
 
+
+    /* ══════════════════════════════════════════════
+       BLOG ARTICLE READER
+       Opens when a blog's Read More button is clicked.
+    ══════════════════════════════════════════════ */
+    .article-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: rgba(5,6,18,0.94);
+      backdrop-filter: blur(14px);
+      overflow-y: auto;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .3s ease, visibility .3s ease;
+      padding: 92px 20px 40px;
+    }
+    .article-overlay.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    .article-reader {
+      width: min(920px, 100%);
+      margin: 0 auto;
+      background: linear-gradient(160deg, #14152d, #0e1024);
+      border: 1px solid rgba(212,168,67,.18);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 35px 100px rgba(0,0,0,.6);
+      transform: translateY(18px);
+      transition: transform .35s ease;
+    }
+    .article-overlay.open .article-reader { transform: translateY(0); }
+
+    .article-hero {
+      min-height: 270px;
+      padding: 48px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(212,168,67,.12), transparent 30%),
+        linear-gradient(135deg, #1a0e30, #0d1535);
+    }
+    .article-hero::after {
+      content: "✦  ✧  ✦";
+      position: absolute;
+      right: 45px;
+      top: 38px;
+      color: rgba(212,168,67,.18);
+      font-size: 2rem;
+      letter-spacing: 12px;
+    }
+    .article-category {
+      color: var(--gold);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .article-hero h1 {
+      max-width: 760px;
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      margin-bottom: 14px;
+    }
+    .article-date {
+      color: var(--muted);
+      font-size: .82rem;
+    }
+    .article-close {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(212,168,67,.22);
+      background: rgba(11,12,26,.55);
+      color: var(--white);
+      cursor: pointer;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: .25s ease;
+      z-index: 2;
+    }
+    .article-close:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+      background: rgba(212,168,67,.08);
+      transform: rotate(90deg);
+    }
+    .article-content {
+      padding: 48px 56px 58px;
+    }
+    .article-intro {
+      color: #d7d2e2;
+      font-size: 1.08rem;
+      line-height: 1.9;
+      margin-bottom: 34px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(212,168,67,.12);
+    }
+    .article-content h2 {
+      font-size: 1.45rem;
+      color: var(--gold-lt);
+      margin: 34px 0 12px;
+    }
+    .article-content p {
+      font-size: .94rem;
+      line-height: 1.9;
+      margin-bottom: 18px;
+    }
+    .article-content ul {
+      margin: 10px 0 24px 20px;
+      color: var(--muted);
+    }
+    .article-content li {
+      margin-bottom: 9px;
+      line-height: 1.75;
+    }
+    .article-highlight {
+      margin: 30px 0;
+      padding: 22px 24px;
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      background: rgba(107,63,160,.09);
+    }
+    .article-highlight p {
+      margin: 0;
+      color: #ddd8e7;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+    .article-footer {
+      margin-top: 42px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(212,168,67,.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .article-footer p {
+      margin: 0;
+      font-size: .78rem;
+      max-width: 540px;
+    }
+    .article-cta {
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 700px) {
+      .article-overlay { padding: 72px 12px 24px; }
+      .article-hero { min-height: 250px; padding: 38px 25px; }
+      .article-hero::after { right: 25px; top: 30px; }
+      .article-content { padding: 32px 25px 38px; }
+      .article-intro { font-size: 1rem; }
+      .article-content p { font-size: .88rem; }
+      .article-footer { flex-direction: column; align-items: flex-start; }
+      .article-cta { width: 100%; }
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 1200px) {
       .price-grid[style*="repeat(4,1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
@@ -530,7 +709,7 @@
       .about-text { max-width: 100%; }
     }
     @media (max-width: 600px) {
-        .profile-badge { top: 355px; right: 0; }
+        .profile-badge { top: 340px; right: 0; }
       .profile-img-wrap { padding: 10px; }
       .profile-img { height: 420px; }
       .profile-stats { gap: 6px; }
@@ -567,6 +746,20 @@
   </style>
 </head>
 <body>
+
+
+<!-- ════════ BLOG ARTICLE READER ════════ -->
+<div class="article-overlay" id="articleOverlay" aria-hidden="true">
+  <article class="article-reader" role="dialog" aria-modal="true" aria-labelledby="articleTitle">
+    <div class="article-hero" id="articleHero">
+      <button class="article-close" id="articleClose" aria-label="Close article">✕</button>
+      <div class="article-category" id="articleCategory"></div>
+      <h1 id="articleTitle"></h1>
+      <div class="article-date" id="articleDate"></div>
+    </div>
+    <div class="article-content" id="articleContent"></div>
+  </article>
+</div>
 
 <!-- ════════ BOOKING MODAL ════════ -->
 <div class="modal-overlay" id="bookingModal">
@@ -844,7 +1037,7 @@
     <div class="container">
       <div class="about-profile reveal">
         <div class="profile-img-wrap">
-          <div class="profile-img"><img src="10945.jpg" alt="Acharya Arun Veer"></div>
+          <div class="profile-img"><img src="10945.jpg" alt="Acharya Arun Veer" loading="eager"></div>
           <div class="profile-badge"><span>6+</span>Years of Practice</div>
           <div class="profile-stats">
             <div class="profile-stat"><strong>6+</strong><span>Years Experience</span></div>
@@ -965,16 +1158,16 @@
           <div class="blog-cat">Featured · Birth Chart</div>
           <h2 style="font-size:1.5rem; margin-bottom:12px;">Understanding Your Birth Chart: A Beginner's Complete Guide</h2>
           <p style="font-size:0.9rem; margin-bottom:24px;">Your birth chart is one of the most intimate maps ever drawn — a snapshot of the sky at the exact moment of your arrival. This guide walks you through each element: planets, houses, signs, and aspects, demystifying the language of astrology without losing its poetry.</p>
-          <div class="blog-meta"><div class="blog-date">14 November 2025</div><div class="blog-readmore">Read Full Article →</div></div>
+          <div class="blog-meta"><div class="blog-date">14 November 2025</div><button type="button" class="blog-readmore" onclick="openArticle('birth-chart')">Read Full Article →</button></div>
         </div>
       </div>
       <div class="blog-grid">
-        <div class="blog-card reveal"><div class="blog-thumb" style="background: linear-gradient(135deg, #0f1a35, #1a2050);">💫</div><div class="blog-body"><div class="blog-cat">Career & Planets</div><h3>How Planets Influence Career: Saturn, Jupiter & the Midheaven Explained</h3><p>Saturn disciplines, Jupiter expands, and your Midheaven reveals the arena you are built to excel in.</p><div class="blog-meta"><div class="blog-date">28 October 2025</div><div class="blog-readmore">Read More →</div></div></div></div>
-        <div class="blog-card reveal reveal-delay-1"><div class="blog-thumb" style="background: linear-gradient(135deg, #1f0a30, #0d1520);">♡</div><div class="blog-body"><div class="blog-cat">Relationships</div><h3>Astrology and Relationships: What Your Venus Sign Says About Love</h3><p>Venus in your chart reveals how you love, what you find beautiful, and what you need to feel truly valued in a partnership.</p><div class="blog-meta"><div class="blog-date">5 October 2025</div><div class="blog-readmore">Read More →</div></div></div></div>
-        <div class="blog-card reveal reveal-delay-2"><div class="blog-thumb" style="background: linear-gradient(135deg, #0a1a20, #151535);">♊</div><div class="blog-body"><div class="blog-cat">Compatibility</div><h3>Zodiac Compatibility Guide: Beyond Sun Signs to Soul-Level Connection</h3><p>Sun sign compatibility is just the surface. The real magic lies in Moon signs, Venus placements, and the Nodal axis.</p><div class="blog-meta"><div class="blog-date">17 September 2025</div><div class="blog-readmore">Read More →</div></div></div></div>
-        <div class="blog-card reveal"><div class="blog-thumb" style="background: linear-gradient(135deg, #1a1005, #0d1530);">🪐</div><div class="blog-body"><div class="blog-cat">Transits</div><h3>Saturn Return: Why Your Late Twenties Feel So Intense</h3><p>Occurring around ages 27–30, the Saturn Return is astrology's most powerful rite of passage.</p><div class="blog-meta"><div class="blog-date">3 September 2025</div><div class="blog-readmore">Read More →</div></div></div></div>
-        <div class="blog-card reveal reveal-delay-1"><div class="blog-thumb" style="background: linear-gradient(135deg, #0a1520, #201030);">🌕</div><div class="blog-body"><div class="blog-cat">Lunar Cycles</div><h3>Working With the Moon: New Moon Intentions & Full Moon Releases</h3><p>The Moon moves through the entire zodiac every 28 days. Here is how to align your goals with its eight phases.</p><div class="blog-meta"><div class="blog-date">20 August 2025</div><div class="blog-readmore">Read More →</div></div></div></div>
-        <div class="blog-card reveal reveal-delay-2"><div class="blog-thumb" style="background: linear-gradient(135deg, #150a20, #0d1835);">☿</div><div class="blog-body"><div class="blog-cat">Planets</div><h3>Mercury Retrograde: The Truth Behind the Chaos (And What to Actually Do)</h3><p>Mercury retrograde is blamed for everything from broken phones to failed relationships. Here is a grounded, practical guide.</p><div class="blog-meta"><div class="blog-date">8 August 2025</div><div class="blog-readmore">Read More →</div></div></div></div>
+        <div class="blog-card reveal"><div class="blog-thumb" style="background: linear-gradient(135deg, #0f1a35, #1a2050);">💫</div><div class="blog-body"><div class="blog-cat">Career & Planets</div><h3>How Planets Influence Career: Saturn, Jupiter & the Midheaven Explained</h3><p>Saturn disciplines, Jupiter expands, and your Midheaven reveals the arena you are built to excel in.</p><div class="blog-meta"><div class="blog-date">28 October 2025</div><button type="button" class="blog-readmore" onclick="openArticle('career-planets')">Read More →</button></div></div></div>
+        <div class="blog-card reveal reveal-delay-1"><div class="blog-thumb" style="background: linear-gradient(135deg, #1f0a30, #0d1520);">♡</div><div class="blog-body"><div class="blog-cat">Relationships</div><h3>Astrology and Relationships: What Your Venus Sign Says About Love</h3><p>Venus in your chart reveals how you love, what you find beautiful, and what you need to feel truly valued in a partnership.</p><div class="blog-meta"><div class="blog-date">5 October 2025</div><button type="button" class="blog-readmore" onclick="openArticle('relationships')">Read More →</button></div></div></div>
+        <div class="blog-card reveal reveal-delay-2"><div class="blog-thumb" style="background: linear-gradient(135deg, #0a1a20, #151535);">♊</div><div class="blog-body"><div class="blog-cat">Compatibility</div><h3>Zodiac Compatibility Guide: Beyond Sun Signs to Soul-Level Connection</h3><p>Sun sign compatibility is just the surface. The real magic lies in Moon signs, Venus placements, and the Nodal axis.</p><div class="blog-meta"><div class="blog-date">17 September 2025</div><button type="button" class="blog-readmore" onclick="openArticle('compatibility')">Read More →</button></div></div></div>
+        <div class="blog-card reveal"><div class="blog-thumb" style="background: linear-gradient(135deg, #1a1005, #0d1530);">🪐</div><div class="blog-body"><div class="blog-cat">Transits</div><h3>Saturn Return: Why Your Late Twenties Feel So Intense</h3><p>Occurring around ages 27–30, the Saturn Return is astrology's most powerful rite of passage.</p><div class="blog-meta"><div class="blog-date">3 September 2025</div><button type="button" class="blog-readmore" onclick="openArticle('saturn-return')">Read More →</button></div></div></div>
+        <div class="blog-card reveal reveal-delay-1"><div class="blog-thumb" style="background: linear-gradient(135deg, #0a1520, #201030);">🌕</div><div class="blog-body"><div class="blog-cat">Lunar Cycles</div><h3>Working With the Moon: New Moon Intentions & Full Moon Releases</h3><p>The Moon moves through the entire zodiac every 28 days. Here is how to align your goals with its eight phases.</p><div class="blog-meta"><div class="blog-date">20 August 2025</div><button type="button" class="blog-readmore" onclick="openArticle('moon-cycles')">Read More →</button></div></div></div>
+        <div class="blog-card reveal reveal-delay-2"><div class="blog-thumb" style="background: linear-gradient(135deg, #150a20, #0d1835);">☿</div><div class="blog-body"><div class="blog-cat">Planets</div><h3>Mercury Retrograde: The Truth Behind the Chaos (And What to Actually Do)</h3><p>Mercury retrograde is blamed for everything from broken phones to failed relationships. Here is a grounded, practical guide.</p><div class="blog-meta"><div class="blog-date">8 August 2025</div><button type="button" class="blog-readmore" onclick="openArticle('mercury-retrograde')">Read More →</button></div></div></div>
       </div>
     </div>
   </section>
@@ -1281,6 +1474,265 @@
   //     Example: India +91 98765 43210 → "919876543210"
   // ══════════════════════════════════════════════
   const WHATSAPP_NUMBER = "919026101942";
+
+
+  // ── BLOG ARTICLE READER ──
+  const articles = {
+    "birth-chart": {
+      category: "Featured · Birth Chart",
+      title: "Understanding Your Birth Chart: A Beginner's Complete Guide",
+      date: "14 November 2025",
+      theme: "birth",
+      intro: "A birth chart is a symbolic snapshot of the sky at the moment of birth. Learning how its main parts fit together can give you a clearer framework for exploring personality, patterns, relationships, and life themes.",
+      body: `
+        <h2>What Is a Birth Chart?</h2>
+        <p>A birth chart maps the positions of the planets against the zodiac for a particular date, time, and place. In astrology, the chart is read as a connected system rather than as a collection of isolated signs.</p>
+
+        <h2>The Three Starting Points</h2>
+        <p>Beginners often start with the Sun, Moon, and Rising sign. The Sun is commonly associated with identity and purpose, the Moon with emotional patterns and inner needs, and the Rising sign with the way a person approaches life and presents themselves to the world.</p>
+
+        <div class="article-highlight"><p>The most useful way to read a chart is to look for patterns and relationships between its different parts rather than relying on one placement alone.</p></div>
+
+        <h2>Planets, Signs & Houses</h2>
+        <p>Planets describe different areas of experience, signs describe how those energies are expressed, and houses show the life areas where they are emphasized. For example, a planet associated with communication can take on a very different expression depending on its sign and house placement.</p>
+
+        <h2>Why Birth Time Matters</h2>
+        <p>The exact time and place of birth can affect the Ascendant and house positions. That is why accurate birth details are especially important when a reading focuses on timing, life areas, or detailed chart interpretation.</p>
+
+        <h2>How to Read Your Chart as a Whole</h2>
+        <ul>
+          <li>Begin with the major placements rather than trying to interpret everything at once.</li>
+          <li>Look for repeated themes across planets, signs, and houses.</li>
+          <li>Pay attention to strong or closely connected placements.</li>
+          <li>Use the chart as a framework for reflection rather than as a fixed script for your future.</li>
+        </ul>
+
+        <p>A thoughtful reading brings these elements together into a coherent picture. The purpose is to understand possibilities, patterns, and areas for conscious growth.</p>
+      `
+    },
+    "career-planets": {
+      category: "Career & Planets",
+      title: "How Planets Influence Career: Saturn, Jupiter & the Midheaven Explained",
+      date: "28 October 2025",
+      theme: "career",
+      intro: "Career astrology is often most useful when it is approached as a tool for understanding strengths, motivations, timing, and professional priorities—not as a substitute for practical career decisions.",
+      body: `
+        <h2>Saturn: Discipline & Responsibility</h2>
+        <p>Saturn is traditionally associated with structure, responsibility, patience, and long-term development. In a career reading, its themes can highlight areas where consistent effort and maturity are important.</p>
+
+        <h2>Jupiter: Growth & Opportunity</h2>
+        <p>Jupiter is associated with expansion, learning, confidence, and opportunity. Its symbolism can be useful when exploring education, broader professional horizons, mentorship, or periods of increased ambition.</p>
+
+        <h2>The Midheaven</h2>
+        <p>The Midheaven, or MC, is one of the key points used in traditional chart interpretation for public life, reputation, achievement, and professional direction. Its sign and planetary connections can add context to career themes.</p>
+
+        <div class="article-highlight"><p>A strong career reading combines astrological symbolism with your actual skills, experience, interests, and circumstances.</p></div>
+
+        <h2>Turning Insight Into Action</h2>
+        <ul>
+          <li>Identify the professional strengths that appear repeatedly in your chart.</li>
+          <li>Compare those themes with the skills you are actively developing.</li>
+          <li>Use timing discussions as a planning aid, not a guarantee.</li>
+          <li>Make major career choices using practical information alongside personal reflection.</li>
+        </ul>
+
+        <p>The goal is greater clarity: knowing what kind of work feels meaningful, where you may need structure, and where growth opportunities deserve attention.</p>
+      `
+    },
+    "relationships": {
+      category: "Relationships",
+      title: "Astrology and Relationships: What Your Venus Sign Says About Love",
+      date: "5 October 2025",
+      theme: "love",
+      intro: "Venus is traditionally associated with affection, attraction, values, pleasure, and the way we relate to beauty and connection. Its placement can provide one perspective on relationship preferences.",
+      body: `
+        <h2>What Venus Represents</h2>
+        <p>In astrology, Venus is often considered when exploring how someone gives and receives affection, what they value in relationships, and what makes them feel appreciated.</p>
+
+        <h2>Venus Through the Signs</h2>
+        <p>The sign containing Venus can describe the style through which these themes are expressed. Some placements may emphasize stability and loyalty, while others may value freedom, conversation, intensity, or emotional reassurance.</p>
+
+        <h2>More Than One Placement</h2>
+        <p>A relationship cannot be understood from Venus alone. The Moon, Mars, Ascendant, seventh house, and aspects between charts can all add different layers to a compatibility reading.</p>
+
+        <div class="article-highlight"><p>Healthy relationships still depend on communication, respect, boundaries, shared values, and everyday choices.</p></div>
+
+        <h2>Using Astrology Constructively</h2>
+        <ul>
+          <li>Use chart symbolism to start conversations about needs and expectations.</li>
+          <li>Look for compatibility in values, communication, and emotional patterns.</li>
+          <li>Avoid treating a single placement as a final judgment about a person.</li>
+          <li>Use insights to understand differences rather than to label them.</li>
+        </ul>
+
+        <p>When used thoughtfully, relationship astrology can become a reflective language for discussing what each person needs to feel seen, respected, and valued.</p>
+      `
+    },
+    "compatibility": {
+      category: "Compatibility",
+      title: "Zodiac Compatibility Guide: Beyond Sun Signs to Soul-Level Connection",
+      date: "17 September 2025",
+      theme: "compatibility",
+      intro: "Sun-sign compatibility can be a fun introduction to astrology, but a detailed compatibility reading looks at a much wider set of chart factors and the dynamics between two complete birth charts.",
+      body: `
+        <h2>Why Sun Signs Are Only the Beginning</h2>
+        <p>Your Sun sign is one important part of a chart, but it does not describe every emotional, relational, and communication pattern. Two people with seemingly different Sun signs can still have strong areas of understanding.</p>
+
+        <h2>The Moon & Emotional Compatibility</h2>
+        <p>The Moon is traditionally connected with emotional needs, comfort, instinctive responses, and inner security. Comparing Moon placements can add valuable context to how two people process feelings.</p>
+
+        <h2>Venus, Mars & Attraction</h2>
+        <p>Venus and Mars are often considered when exploring affection, attraction, desire, and relationship dynamics. Their connections can help identify both areas of natural flow and areas where communication may be needed.</p>
+
+        <h2>The Nodal Axis & Growth Themes</h2>
+        <p>The lunar nodes are used in many astrological traditions to explore patterns of development, familiarity, and growth. In relationship readings, they can provide another symbolic layer for understanding why a connection may feel especially significant.</p>
+
+        <div class="article-highlight"><p>Compatibility is not about finding a “perfect” chart. It is about understanding how two people can communicate, grow, and navigate differences together.</p></div>
+
+        <p>A professional reading should therefore consider the whole relationship rather than reducing compatibility to a single zodiac pairing.</p>
+      `
+    },
+    "saturn-return": {
+      category: "Transits",
+      title: "Saturn Return: Why Your Late Twenties Feel So Intense",
+      date: "3 September 2025",
+      theme: "saturn",
+      intro: "The Saturn Return is a traditional astrological milestone that occurs when Saturn returns to approximately the same zodiac position it occupied at birth. It is often discussed as a period of responsibility, reassessment, and maturation.",
+      body: `
+        <h2>What Is a Saturn Return?</h2>
+        <p>Saturn takes roughly 29 years to travel around the zodiac. Because of that cycle, the first Saturn Return commonly occurs in the late twenties or around the early thirties, with later returns following the same broad cycle.</p>
+
+        <h2>Why It Can Feel Significant</h2>
+        <p>Astrologically, Saturn is associated with structure, responsibility, boundaries, and long-term commitments. During a Saturn Return, people may naturally reflect on work, relationships, finances, identity, and the direction of their lives.</p>
+
+        <h2>What It Is Not</h2>
+        <p>A Saturn Return does not mean that every difficult event in your life is caused by Saturn. Real-world circumstances, choices, relationships, and unexpected events remain important parts of the picture.</p>
+
+        <div class="article-highlight"><p>Think of the Saturn Return as a symbolic checkpoint: What is worth building, what needs restructuring, and what are you ready to take responsibility for?</p></div>
+
+        <h2>Working With the Period</h2>
+        <ul>
+          <li>Review commitments that no longer fit your long-term priorities.</li>
+          <li>Create realistic structures around money, health, work, and time.</li>
+          <li>Choose sustainable progress over short-term pressure.</li>
+          <li>Allow yourself to outgrow roles that no longer represent who you are.</li>
+        </ul>
+      `
+    },
+    "moon-cycles": {
+      category: "Lunar Cycles",
+      title: "Working With the Moon: New Moon Intentions & Full Moon Releases",
+      date: "20 August 2025",
+      theme: "moon",
+      intro: "The Moon has long been used in astrology and many cultural traditions as a symbol of cycles, reflection, renewal, and change. Following its phases can provide a simple rhythm for personal reflection.",
+      body: `
+        <h2>The New Moon</h2>
+        <p>The New Moon is traditionally associated with beginnings and intention-setting. It can be a useful moment to identify what you would like to focus on during the next phase of your life or a particular project.</p>
+
+        <h2>The Waxing Phase</h2>
+        <p>As the Moon appears to grow, the period is often used symbolically for building momentum. This can be a good time to turn an intention into small, practical actions.</p>
+
+        <h2>The Full Moon</h2>
+        <p>The Full Moon is traditionally linked with illumination, completion, and reflection. Rather than treating it as a guarantee of sudden change, you can use it as a reminder to review what has developed.</p>
+
+        <h2>The Waning Phase</h2>
+        <p>The waning cycle can serve as a symbolic period for simplifying, releasing distractions, and making space for the next beginning.</p>
+
+        <div class="article-highlight"><p>Working with lunar cycles is most valuable when the ritual supports real reflection and practical action.</p></div>
+
+        <h2>A Simple Monthly Practice</h2>
+        <ul>
+          <li>At the New Moon, write one or two realistic intentions.</li>
+          <li>During the waxing phase, take consistent action.</li>
+          <li>At the Full Moon, review progress and acknowledge what you have learned.</li>
+          <li>During the waning phase, release one habit, task, or commitment that no longer serves your priorities.</li>
+        </ul>
+      `
+    },
+    "mercury-retrograde": {
+      category: "Planets",
+      title: "Mercury Retrograde: The Truth Behind the Chaos (And What to Actually Do)",
+      date: "8 August 2025",
+      theme: "mercury",
+      intro: "Mercury retrograde is one of astrology's most familiar ideas. It is traditionally associated with periods of review, communication, travel, technology, and unfinished business—not a promise that everything will go wrong.",
+      body: `
+        <h2>What “Retrograde” Means</h2>
+        <p>From Earth, a retrograde period is an apparent backward motion of a planet against the background of the zodiac. The planet is not literally reversing its orbit around the Sun.</p>
+
+        <h2>Why Mercury Gets So Much Attention</h2>
+        <p>Mercury is traditionally associated with communication, information, learning, short-distance travel, and commerce. Because these themes are part of everyday life, Mercury retrograde symbolism is often easy to notice.</p>
+
+        <h2>A More Grounded Approach</h2>
+        <p>Instead of assuming that a retrograde period causes problems, use the symbolism as a reminder to slow down and review details. Back up important files, confirm travel plans, reread important messages, and allow extra time where practical.</p>
+
+        <div class="article-highlight"><p>Use astrology as a prompt for awareness—not as a reason to fear ordinary mistakes, delays, or changes.</p></div>
+
+        <h2>Practical Checklist</h2>
+        <ul>
+          <li>Double-check dates, names, addresses, and important documents.</li>
+          <li>Keep backups of important digital information.</li>
+          <li>Clarify conversations instead of assuming what someone meant.</li>
+          <li>Review unfinished projects before starting unnecessary new ones.</li>
+          <li>Leave reasonable flexibility in travel and appointment plans.</li>
+        </ul>
+
+        <p>The most useful takeaway is simple: review carefully, communicate clearly, and keep perspective.</p>
+      `
+    }
+  };
+
+  function articleTheme(theme) {
+    const themes = {
+      birth: "linear-gradient(135deg,#1a0e30,#0d1535)",
+      career: "linear-gradient(135deg,#0f1a35,#1a2050)",
+      love: "linear-gradient(135deg,#1f0a30,#0d1520)",
+      compatibility: "linear-gradient(135deg,#0a1a20,#151535)",
+      saturn: "linear-gradient(135deg,#1a1005,#0d1530)",
+      moon: "linear-gradient(135deg,#0a1520,#201030)",
+      mercury: "linear-gradient(135deg,#150a20,#0d1835)"
+    };
+    return themes[theme] || themes.birth;
+  }
+
+  function openArticle(id) {
+    const article = articles[id];
+    if (!article) return;
+
+    const overlay = document.getElementById('articleOverlay');
+    document.getElementById('articleCategory').textContent = article.category;
+    document.getElementById('articleTitle').textContent = article.title;
+    document.getElementById('articleDate').textContent = article.date;
+    document.getElementById('articleHero').style.background = articleTheme(article.theme);
+
+    document.getElementById('articleContent').innerHTML = `
+      <p class="article-intro">${article.intro}</p>
+      ${article.body}
+      <div class="article-footer">
+        <p>Astrology is intended as a traditional and spiritual framework for reflection. Personal decisions should always consider your own circumstances and appropriate professional advice where relevant.</p>
+        <button type="button" class="btn btn-gold article-cta" onclick="closeArticle(); openBookingModal('Consultation')">Book a Consultation</button>
+      </div>
+    `;
+
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    overlay.scrollTop = 0;
+  }
+
+  function closeArticle() {
+    const overlay = document.getElementById('articleOverlay');
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('articleClose').addEventListener('click', closeArticle);
+  document.getElementById('articleOverlay').addEventListener('click', e => {
+    if (e.target.id === 'articleOverlay') closeArticle();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeArticle();
+  });
 
   // ── PAGE NAVIGATION ──
   function navigate(target) {
